@@ -1,0 +1,389 @@
+/* -------------------------------------- */
+body .footer nav ul, body .footer nav, body .products .container .information, body .products .container .imgBX, body .products .container, body .products .container-sale .information, body .products .container-sale .imgBX, body .products .container-sale, body .header {
+  width: 100%;
+  height: 100%;
+}
+
+body .products .container .information .title, body .products .container-sale .information .title {
+  text-align: left;
+  width: 95%;
+  grid-row: 1/2;
+  font-size: 1rem;
+  font-family: "Josefin Sans", cursive;
+}
+
+body .products .container .information .score, body .products .container-sale .information .score {
+  width: 95%;
+  grid-row: 2/3;
+  font-size: 1rem;
+  font-family: "Josefin Sans", cursive;
+}
+
+body .products .container .information .priceBX .price, body .products .container-sale .information .priceBX .price {
+  width: 100%;
+  grid-row: 1/2;
+  font-size: 1rem;
+  font-family: "Josefin Sans", cursive;
+}
+
+/* -------------------------------------------------------------------------------------------------- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  width: 100%;
+  min-height: 100vh;
+  display: grid;
+  justify-items: center;
+  align-items: center;
+  grid-template-rows: 50% 150% 15%;
+}
+@media all and (max-width: 425px) {
+  body {
+    grid-template-rows: 30% 220% 15%;
+  }
+}
+@media all and (min-width: 1024px) {
+  body {
+    grid-template-rows: 60% 150% 15%;
+  }
+}
+@media all and (min-width: 1440px) {
+  body {
+    grid-template-rows: 65% 220% 15%;
+  }
+}
+body .header {
+  background: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0)), url(../images/background-electric-guitar.jpg) center no-repeat;
+  background-size: cover;
+}
+body .products {
+  width: 98%;
+  height: 98%;
+  display: grid;
+  justify-items: center;
+  align-items: center;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1vw;
+  border-left: 1px solid rgba(128, 128, 128, 0.431372549);
+  border-top: 1px solid rgba(128, 128, 128, 0.431372549);
+}
+@media all and (max-width: 425px) {
+  body .products {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+body .products .container-sale {
+  display: grid;
+  justify-items: center;
+  align-items: center;
+  grid-template-rows: 10% 70% 20%;
+  border-right: 1px solid rgba(128, 128, 128, 0.431372549);
+  border-bottom: 1px solid rgba(128, 128, 128, 0.431372549);
+}
+body .products .container-sale:hover {
+  box-shadow: 0px 0px 10px 2px rgba(128, 128, 128, 0.431372549);
+}
+body .products .container-sale .sale {
+  text-align: right;
+  width: 100%;
+  color: #d62828;
+  font-size: 1.5rem;
+  font-family: fantasy;
+  grid-row: 1/2;
+}
+@media all and (min-width: 2560px) {
+  body .products .container-sale .sale {
+    font-size: 4rem;
+  }
+}
+body .products .container-sale .imgBX {
+  grid-row: 2/3;
+}
+body .products .container-sale .information {
+  display: grid;
+  justify-items: center;
+  align-items: center;
+  grid-template-rows: repeat(3, 1fr);
+}
+@media all and (min-width: 2560px) {
+  body .products .container-sale .information .title {
+    font-size: 2rem;
+  }
+}
+@media all and (min-width: 2560px) {
+  body .products .container-sale .information .score {
+    font-size: 2rem;
+  }
+}
+body .products .container-sale .information .score span.bi.bi-star-fill {
+  color: #ffeb3b;
+}
+body .products .container-sale .information .priceBX {
+  width: 95%;
+  height: 100%;
+  display: grid;
+  justify-items: center;
+  align-items: center;
+  grid-template-rows: repeat(2, 1fr);
+  display: grid;
+  justify-items: center;
+  align-items: center;
+  grid-template-columns: 80% 20%;
+}
+body .products .container-sale .information .priceBX .percent {
+  grid-column: 2/3;
+  grid-row: 1/3;
+  background-color: #d62828;
+  width: 100%;
+  color: white;
+  font-size: 1rem;
+  font-family: "Josefin Sans", cursive;
+  font-weight: bold;
+  text-align: center;
+  border-radius: 15px;
+}
+@media all and (min-width: 2560px) {
+  body .products .container-sale .information .priceBX .percent {
+    font-size: 2rem;
+  }
+}
+@media all and (min-width: 2560px) {
+  body .products .container-sale .information .priceBX .price {
+    font-size: 2rem;
+  }
+}
+body .products .container-sale .information .priceBX h3.last-price {
+  font-size: 0.9rem;
+  font-family: "Josefin Sans", cursive;
+  color: gray;
+  text-align: left;
+  width: 90%;
+}
+@media all and (min-width: 2560px) {
+  body .products .container-sale .information .priceBX h3.last-price {
+    font-size: 2rem;
+  }
+}
+body .products .container {
+  display: grid;
+  justify-items: center;
+  align-items: center;
+  grid-template-rows: 80% 20%;
+  border-right: 1px solid rgba(128, 128, 128, 0.431372549);
+  border-bottom: 1px solid rgba(128, 128, 128, 0.431372549);
+}
+body .products .container:hover {
+  box-shadow: 0px 0px 10px 2px rgba(128, 128, 128, 0.431372549);
+}
+body .products .container .information {
+  display: grid;
+  justify-items: center;
+  align-items: center;
+  grid-template-rows: repeat(3, 1fr);
+}
+body .products .container .information .title {
+  grid-row: 1/2;
+}
+@media all and (min-width: 2560px) {
+  body .products .container .information .title {
+    font-size: 2rem;
+  }
+}
+body .products .container .information .score {
+  grid-row: 2/3;
+}
+@media all and (min-width: 2560px) {
+  body .products .container .information .score {
+    font-size: 2rem;
+  }
+}
+body .products .container .information .score span.bi.bi-star-fill {
+  color: #ffeb3b;
+}
+body .products .container .information .priceBX {
+  width: 95%;
+  height: 100%;
+  grid-row: 3/4;
+}
+@media all and (min-width: 2560px) {
+  body .products .container .information .priceBX .price {
+    font-size: 2rem;
+  }
+}
+body .products .img1 {
+  background: url(../images/guitar-electrinic-1.jpg) center no-repeat;
+  background-size: cover;
+}
+body .products .img2 {
+  background: url(../images/guitar-electrinic-2.jpg) center no-repeat;
+  background-size: cover;
+}
+body .products .img3 {
+  background: url(../images/guitar-electrinic-3.jpg) center no-repeat;
+  background-size: cover;
+}
+body .products .img4 {
+  background: url(../images/guitar-electrinic-4.jpg) center no-repeat;
+  background-size: cover;
+}
+body .products .img5 {
+  background: url(../images/guitar-electrinic-5.jpg.jpg) center no-repeat;
+  background-size: cover;
+}
+body .products .img6 {
+  background: url(../images/guitar-electrinic-6.jpg) center no-repeat;
+  background-size: cover;
+}
+body .footer {
+  width: 98%;
+  height: 95%;
+  grid-row: 3/4;
+  background-color: rgba(232, 182, 175, 0.2588235294);
+  border-radius: 15px;
+}
+body .footer nav ul {
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  justify-content: space-around;
+}
+body .footer nav ul li {
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  justify-content: center;
+  border: 1px solid #69355b;
+  height: 8vw;
+  width: 8vw;
+  border-radius: 50%;
+  box-shadow: inset 0px 0px 15px 6px #e8b6af;
+  background-color: #9a5967;
+}
+@media all and (max-width: 320px) {
+  body .footer nav ul li {
+    height: 15vw;
+    width: 15vw;
+  }
+}
+@media all and (max-width: 375px) {
+  body .footer nav ul li {
+    height: 15vw;
+    width: 15vw;
+  }
+}
+@media all and (max-width: 425px) {
+  body .footer nav ul li {
+    height: 15vw;
+    width: 15vw;
+  }
+}
+@media all and (min-width: 1024px) {
+  body .footer nav ul li {
+    width: 6vw;
+    height: 6vw;
+  }
+}
+@media all and (min-width: 1440px) {
+  body .footer nav ul li {
+    width: 5vw;
+    height: 5vw;
+  }
+}
+body .footer nav ul li::after {
+  content: "";
+  width: 9.5vw;
+  height: 0.4vw;
+  background: #9a5967;
+  z-index: -1;
+  position: absolute;
+  box-shadow: 0px 0px 20px 10px #e8b6af;
+  transition: all 0.5s;
+}
+@media all and (max-width: 320px) {
+  body .footer nav ul li::after {
+    width: 20vw;
+  }
+}
+@media all and (max-width: 375px) {
+  body .footer nav ul li::after {
+    width: 19vw;
+  }
+}
+@media all and (max-width: 425px) {
+  body .footer nav ul li::after {
+    width: 18vw;
+  }
+}
+@media all and (min-width: 1024px) {
+  body .footer nav ul li::after {
+    width: 7vw;
+    height: 0.3vw;
+  }
+}
+@media all and (min-width: 1440px) {
+  body .footer nav ul li::after {
+    width: 6vw;
+    height: 0.3vw;
+  }
+}
+body .footer nav ul li::before {
+  content: "";
+  width: 0.4vw;
+  height: 9.5vw;
+  background: #69355b;
+  z-index: -1;
+  position: absolute;
+  box-shadow: 0px 0px 20px 10px #e8b6af;
+  transition: all 0.5s;
+}
+@media all and (max-width: 320px) {
+  body .footer nav ul li::before {
+    height: 20vw !important;
+  }
+}
+@media all and (max-width: 375px) {
+  body .footer nav ul li::before {
+    height: 19vw;
+  }
+}
+@media all and (max-width: 425px) {
+  body .footer nav ul li::before {
+    height: 18vw;
+  }
+}
+@media all and (min-width: 1024px) {
+  body .footer nav ul li::before {
+    height: 7vw;
+    width: 0.3vw;
+  }
+}
+@media all and (min-width: 1440px) {
+  body .footer nav ul li::before {
+    height: 6vw;
+    width: 0.3vw;
+  }
+}
+body .footer nav ul li:hover::before, body .footer nav ul li:hover::after {
+  transform: rotate(90deg);
+  transition: transform 0.5s ease-out;
+}
+body .footer nav ul li:hover a {
+  color: #e8b6af;
+  text-shadow: 0 0 5px white;
+  transition: all 0.5s ease-out;
+}
+body .footer nav ul li a {
+  text-decoration: none;
+  text-shadow: 0 0 5px white;
+  font-size: 1rem;
+  color: #69355b;
+}
+@media all and (min-width: 2560px) {
+  body .footer nav ul li a {
+    font-size: 2rem;
+  }
+}/*# sourceMappingURL=electronic-guitar.css.map */

@@ -1,0 +1,488 @@
+$font-dancing : 'Dancing Script',
+monospace;
+$font-Josefin : 'Josefin Sans',
+cursive;
+$font-Nunito : 'Nunito',
+cursive;
+$font-Marvel : 'Marvel';
+
+$apricot: #FBD2B4ff;
+$apricot-opacity: #fbd3b64d;
+$maximum-red-purple: #A92974ff;
+$maximum-red-purple-opacity: #a929744d;
+$mango-tango: #F68849ff;
+$mango-tango-opacity: #f689494d;
+$maximum-yellow-red: #F6B95Bff;
+$maximum-yellow-red-opacity: #f6b85b4d;
+$purpureus: #9857A4ff;
+$purpureus-opacity: #9857a44d;
+$mauvelous: #E391A3ff;
+$mauvelous-opacity: #e391a34d;
+
+// screen
+$mobile-s : 320px;
+$mobile-m : 375px;
+$mobile-l : 425px;
+$labtop : 1024px;
+$labtop-l : 1440px;
+$labtop-4k : 2560px;
+// screen
+
+@mixin MediaQuery($screen) {
+    @if $screen==$mobile-l {
+        @media all and (max-width : $screen) {
+            @content;
+        }
+    }
+
+    @else if $screen==$mobile-m {
+        @media all and (max-width : $screen) {
+            @content;
+        }
+    }
+
+    @else if $screen==$mobile-s {
+        @media all and (max-width : $screen) {
+            @content;
+        }
+    }
+
+    @else if $screen==$labtop {
+        @media all and (min-width : $screen) {
+            @content;
+        }
+    }
+
+    @else if $screen==$labtop-l {
+        @media all and (min-width : $screen) {
+            @content;
+        }
+    }
+
+    @else if $screen==$labtop-4k {
+        @media all and (min-width : $screen) {
+            @content;
+        }
+    }
+}
+
+// template
+$template-for-body : 50% 150% 40% 15%;
+$template-for-header-mobile : 25% 445% 50% 15%;
+$template-for-mobile-L : 35% 180% 50% 15%;  
+$template-for-header-labtop : 60% 210% 42% 15%;
+$template-for-header-labtop-lg : 90% 230% 40% 15%;
+$template-for-products : repeat(3,1fr);
+$template-for-products-mobile-L : repeat(2,1fr);
+$template-for-products-mobile-m-s : 1fr;
+$template-for-container : 60% 40%;
+// template
+
+// style
+$row : rows;
+$column : columns;
+// style
+@mixin GridStyle($template, $style) {
+    display: grid;
+    justify-items: center;
+    align-items: center;
+    grid-template-#{$style}: $template;
+}
+
+// justify-content
+$center : center;
+$space-evenly : space-evenly;
+$space-around : space-around;
+// justify-content
+// flex-direction
+$r : row;
+$c : column;
+// flex-direction
+@mixin FlexStyle($flex-direction, $justify-content) {
+    display: flex;
+    align-items: center;
+    flex-direction: $flex-direction;
+    justify-content: $justify-content;
+}
+%whith-height {
+    width: 100%;
+    height: 100%;
+}
+/* ----------------------------------------------------------------------------------------------------------------- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+@keyframes background {
+    0% {background-color: $apricot-opacity;}
+    50% {background-color: $mauvelous-opacity;}
+    100% {background-color: $purpureus-opacity;}
+}
+
+@keyframes slideshow {
+    0% {
+        background: url(../images/harp-history1.jpg) center no-repeat;
+        background-size: contain;
+    }
+    33% {
+        background: url(../images/harp-history2.jpg) center no-repeat;
+        background-size: contain;
+    }
+    66% {
+        background: url(../images/harp-history3.jpeg) center no-repeat;
+        background-size: contain;
+    }
+    100% {
+        background: url(../images/harp-history4.jpg) center no-repeat;
+        background-size: contain;
+    }
+}
+
+body {
+    width: 100%;
+    min-height: 100vh;
+    @include GridStyle($template-for-body,$row);
+
+    @include MediaQuery($mobile-l) {
+        grid-template-rows: $template-for-mobile-L;
+    }
+    @include MediaQuery($mobile-m) {
+        grid-template-rows: $template-for-header-mobile;
+    }
+    @include MediaQuery($labtop) {
+        grid-template-rows: $template-for-header-labtop;
+    }
+    @include MediaQuery($labtop-l) {
+        grid-template-rows: $template-for-header-labtop-lg;
+    }
+
+    .header {
+        @extend %whith-height;
+        background: linear-gradient(90deg,rgb(251 162 195 / 40%),rgb(255 0 235 / 30%)),url(../images/background-harp-page.jpg) center no-repeat;
+        background-size: cover;
+        box-shadow: 8px 11px 10px 5px rgb(128 128 128 / 60%);
+    }
+
+    .products {
+        width: 95%;
+        height: 95%;
+        @include GridStyle($template-for-products,$column);
+        gap: 1vw;
+        box-shadow: 0px 0px 20px 10px $apricot;
+
+        @include MediaQuery($mobile-l){
+            grid-template-columns: $template-for-products-mobile-L;
+            height: 99%;
+        }
+        @include MediaQuery($mobile-m){
+            grid-template-columns: $template-for-products-mobile-m-s;
+        }
+
+        .container {
+            @extend %whith-height;
+            @include GridStyle($template-for-container,$row);
+
+            .information {
+                font-family: $font-Nunito;
+                @extend %whith-height;
+                @include GridStyle($template-for-products,$row);
+                animation: background 3s infinite alternate ease-in-out;
+
+                .title {
+                    font-size: 1rem;
+                    font-weight: 800;
+                    letter-spacing: 2px;
+                    grid-row: 1/2;
+
+                    @include MediaQuery($labtop-l) {
+                        font-size: 1.5rem;
+                    }
+                    @include MediaQuery($labtop-4k) {
+                        font-size: 2.5rem;
+                    }
+                }
+                .price {
+                    font-size: 1rem;
+                    grid-row: 2/3;
+
+                    @include MediaQuery($labtop-l) {
+                        font-size: 1.5rem;
+                    }
+                    @include MediaQuery($labtop-4k) {
+                        font-size: 2.5rem;
+                    }
+                }
+                .buy {
+                    width: 60%;
+                    height: 60%;
+                    border: groove rgba(255, 255, 255, 0.3215686275);
+                    background: transparent;
+                    border-radius: 15px;
+                    font-size: 1rem;
+                    letter-spacing: 3px;
+                    font-weight: bold;
+                    font-family: $font-dancing;
+                    grid-row: 3/4;
+
+                    @include MediaQuery($labtop-l) {
+                        font-size: 1.5rem;
+                    }
+                    @include MediaQuery($labtop-4k) {
+                        font-size: 2.5rem;
+                    }
+
+                    &:focus {
+                        width: 80%;
+                        height: 80%;
+                        font-size: 1.5rem;
+                        color: $maximum-red-purple;
+                        font-weight: bold;
+
+                        @include MediaQuery($labtop-4k) {
+                            font-size: 3rem;
+                        }
+                    }
+                }
+            }
+        }
+        .num1 {
+            border: 2px dashed $apricot;
+                background: $apricot-opacity;
+            .img1 {
+                @extend %whith-height;
+                background: url(../images/Harp-1.jpg) center no-repeat;
+                background-size: cover;
+            }
+        }
+        .num2 {
+            border: 2px dotted $maximum-red-purple;
+                background: $maximum-red-purple-opacity;
+            .img2 {
+                @extend %whith-height;
+                background: url(../images/Harp-2.jpg) center no-repeat;
+                background-size: cover;
+            }
+        }
+        .num3 {
+            border: 2px groove $mango-tango;
+                background: $mango-tango-opacity;
+            .img3 {
+                @extend %whith-height;
+                background: url(../images/Harp-3.jpg) center no-repeat;
+                background-size: cover;
+            }
+        }
+        .num4 {
+            border: 2px solid $maximum-yellow-red;
+                background: $maximum-yellow-red-opacity;
+            .img4 {
+                @extend %whith-height;
+                background: url(../images/Harp-4.jpg) center no-repeat;
+                background-size: cover;
+            }
+        }
+        .num5 {
+            border: 2px outset $purpureus;
+                background: $purpureus-opacity;
+            .img5 {
+                @extend %whith-height;
+                background: url(../images/Harp-5.jpg) center no-repeat;
+                background-size: cover;
+            }
+        }
+        .num6 {
+            border: 2px ridge $mauvelous;
+                background: $mauvelous-opacity;
+            .img6 {
+                @extend %whith-height;
+                background: url(../images/Harp-6.jpg) center no-repeat;
+                background-size: cover;
+            }
+        }
+    }
+
+    .pre-footer {
+        width: 95%;
+        height: 100%;
+        box-shadow: 0px 0px 15px 2px $maximum-yellow-red;
+
+        @include MediaQuery($mobile-l) {
+            position: relative;
+        }
+
+        .two-parts {
+            @extend %whith-height;
+            @include GridStyle($template-for-products-mobile-L,$column);
+
+            @include MediaQuery($mobile-l) {
+                grid-template-columns: $template-for-products-mobile-m-s;
+            }
+
+            .right {
+                @extend %whith-height;
+                border-right: 2px dashed $mango-tango;
+                box-shadow: inset 0px 0px 20px 5px $mango-tango;
+
+                @include MediaQuery($mobile-l) {
+                    position: absolute;
+                }
+
+                .text {
+                    @extend %whith-height;
+                    font-size: .9rem;
+                    font-family: $font-Nunito;
+                    padding: 1vw;
+                    line-height: 3vw;
+
+                    @include MediaQuery($mobile-l) {
+                        line-height: 8vw;
+                        color: #000000cc;
+                        background-color: $apricot-opacity;
+                    }
+                    @include MediaQuery($labtop-4k) {
+                        font-size: 1.9rem
+                    }
+                }
+            }
+
+            .left {
+                @extend %whith-height;
+                animation: slideshow 10s infinite alternate ease-in-out;
+
+                .slide-show {
+                    @extend %whith-height;
+                }
+            }
+        }
+    }
+
+    .footer {
+        @extend %whith-height;
+        border-radius: 15px;
+
+        nav {
+            @extend %whith-height;
+
+            ul {
+                @extend %whith-height;
+                @include FlexStyle($r, $space-around);
+
+                li {
+                    @include FlexStyle($r, $center);
+                    border: 1px solid $mauvelous;
+                    height: 8vw;
+                    width: 8vw;
+                    border-radius: 50%;
+                    box-shadow: inset 0px 0px 20px 13px $apricot-opacity;
+                    background-color: $apricot;
+
+                    @include MediaQuery($mobile-s) {
+                        height: 15vw;
+                        width: 15vw;
+                    }
+                    @include MediaQuery($mobile-m) {
+                        height: 15vw;
+                        width: 15vw;
+                    }
+                    @include MediaQuery($mobile-l) {
+                        height: 15vw;
+                        width: 15vw;
+                    }
+
+                    @include MediaQuery($labtop) {
+                        width: 6vw;
+                        height: 6vw;
+                    }
+                    @include MediaQuery($labtop-l) {
+                        width: 5vw;
+                        height: 5vw;
+                    }
+
+                    &::after {
+                        content: "";
+                        width: 9.5vw;
+                        height: 0.4vw;
+                        background: $maximum-red-purple;
+                        z-index: -1;
+                        position: absolute;
+                        box-shadow: 0px 0px 20px 10px $maximum-red-purple-opacity;
+                        transition: all 0.5s;
+
+                        @include MediaQuery($mobile-s) {
+                            width: 20vw;
+                        }
+                        @include MediaQuery($mobile-m) {
+                            width: 19vw;
+                        }
+                        @include MediaQuery($mobile-l) {
+                            width: 18vw;
+                        }
+                        @include MediaQuery($labtop) {
+                            width: 7vw;
+                            height: 0.3vw;
+                        }
+                        @include MediaQuery($labtop-l) {
+                            width: 6vw;
+                            height: 0.3vw;
+                        }
+                    }
+
+                    &::before {
+                        content: "";
+                        width: 0.4vw;
+                        height: 9.5vw;                    
+                        background: $purpureus;
+                        z-index: -1;
+                        position: absolute;
+                        box-shadow: 0px 0px 20px 10px $purpureus-opacity;
+                        transition: all 0.5s;
+
+                        @include MediaQuery($mobile-s) {
+                            height: 20vw !important;
+                        }
+                        @include MediaQuery($mobile-m) {
+                            height: 19vw;
+                        }
+                        @include MediaQuery($mobile-l) {
+                            height: 18vw;
+                        }
+                        @include MediaQuery($labtop) {
+                            height: 7vw;
+                            width: 0.3vw;
+                        }
+                        @include MediaQuery($labtop-l) {
+                            height: 6vw;
+                            width: 0.3vw;
+                        }
+                    }
+
+                    &:hover::before,
+                    &:hover::after {
+                        transform: rotate(90deg);
+                        transition: transform .5s ease-out;
+                    }
+
+                    &:hover a {
+                        color: $maximum-yellow-red;
+                        text-shadow: 0 0 5px $maximum-yellow-red-opacity;
+                        transition: all 0.5s ease-out;
+                    }
+
+                    a {
+                        text-decoration: none;
+                        text-shadow: 0 0 5px $mango-tango-opacity;
+                        font-size: 1rem;
+                        color: $mango-tango;
+
+                        @include MediaQuery($labtop-4k) {
+                            font-size: 2rem;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+}

@@ -1,0 +1,452 @@
+$color-background : #ECECECff;
+$color-first : #f34a4a;
+$color-second : #CC5539ff;
+$color-third : #AD726Dff;
+$color-forth : #F69D17ff;
+$color-fifth : #394650ff;
+$color-sixth : #E4B362ff;
+$color-seventh : #FDD111ff;
+$onyx: #37383Aff;
+$rich-black-fogra-29: #0D0F15ff;
+$silver-sand: #BBC0C8ff;
+$charcoal: #373D49ff;
+$eerie-black: #15161Aff;
+// ---------------------------------------------------------------------
+$font-dancing : 'Dancing Script',
+monospace;
+$font-Josefin : 'Josefin Sans',
+cursive;
+$font-Nunito : 'Nunito',
+cursive;
+$font-Marvel : 'Marvel';
+// ---------------------------------------------------------------------
+/* style */
+$row : rows;
+$column : columns;
+/* style */
+/* template */
+$template-main-body-labtop : 20% 68% 35% 15%;
+$template-main-body-labtop-lg : 20% 80% 35% 15%;
+$template-main-body-labtop-4k : 20% 81% 35% 15%;
+$template-main-body : 20% 50% 20% 10%;
+$template-main-products : repeat(3, 1fr);
+$template-main-grid : 65% repeat(3, 1fr);
+$template-main-description : 1fr;
+$template-imgBX : 60% 40%;
+$template-contentBX : repeat(2, 1fr);
+$template-Footer-UL : repeat(4, 1fr);
+
+/* template */
+@mixin GridStyle($templates, $style) {
+    display: grid;
+    align-items: center;
+    justify-items: center;
+    grid-template-#{$style}: $templates;
+}
+
+@mixin Flexstyle {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@mixin titleStyle {
+    font-size: 3vw;
+    grid-row: 1/2;
+    font-family: "Josefin Sans", cursive;
+    color: black;
+}
+
+@mixin priceStyle {
+    font-size: 2vw;
+    font-family: "Josefin Sans", cursive;
+    color: black;
+    transition: all 0.5s;
+    grid-row: 2/3;
+}
+
+@mixin buttonStyle($color) {
+    border: none;
+    width: 11vw;
+    height: 3vw;
+    background-color: $color;
+    border-radius: 20px;
+    font-size: 2vw;
+    font-family: "Dancing Script", monospace;
+    color: white;
+    position: absolute;
+    bottom: -100%;
+}
+
+@mixin descriptionStyle {
+    @include GridStyle($template-main-description, $column);
+    grid-row: 3/4;
+    font-size: 2vw ;
+    line-height: 3vw ;
+    font-family: "Dancing Script", monospace;
+    text-indent: 2vw;
+    padding: 0 1vw;
+    height: 100%;
+}
+
+@mixin styleProduct {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    position: relative;
+    border: 1px outset $silver-sand;
+    border-radius: 5px;
+}
+
+@mixin buttonHover {
+    width: 3vw;
+    height: 3vw;
+    border-radius: 50%;
+    transition: all .5s;
+}
+
+/*  Footer */
+@mixin hoverH {
+    height: 100%;
+    transition: height .3s;
+}
+
+@mixin hoverW {
+    width: 100%;
+    transition: width .3s;
+}
+
+@mixin styleDiv($side) {
+    position: absolute;
+    #{$side}: 0;
+    z-index: 1;
+}
+/* Footer */
+$background-style : center no-repeat;
+// ---------------------------------------------------------------------------------------------------------------
+/* screens */
+$labtop : 1024px;
+$labtop-lg : 1440px;
+$labtop-4k : 2560px;
+$mobile-l : 425px;
+$mobile-m : 375px;
+$mobile-s : 320px;
+
+/* screens */
+@mixin MediaQuery($screen) {
+    @if $screen==$mobile-l {
+        @media all and (max-width : $screen) {
+            @content;
+        }
+    }
+
+    @else if $screen==$mobile-m {
+        @media all and (max-width : $screen) {
+            @content;
+        }
+    }
+
+    @else if $screen==$mobile-s {
+        @media all and (max-width : $screen) {
+            @content;
+        }
+    }
+
+    @else if $screen==$labtop {
+        @media all and (min-width : $screen) {
+            @content;
+        }
+    }
+
+    @else if $screen==$labtop-lg {
+        @media all and (min-width : $screen) {
+            @content;
+        }
+    }
+
+    @else if $screen==$labtop-4k {
+        @media all and (min-width : $screen) {
+            @content;
+        }
+    }
+}
+
+// ---------------------------------------------------------------------------------------------------------------
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    width: 100%;
+    min-height: 100vh;
+    @include GridStyle($template-main-body, $row);
+    background: url(../images/background-piano-body.jpg) repeat;
+    background-size: cover;
+
+    @include MediaQuery($labtop) {
+        @include GridStyle($template-main-body-labtop, $row);
+    }
+
+    @include MediaQuery($labtop-lg) {
+        @include GridStyle($template-main-body-labtop-lg, $row);
+    }
+
+    @include MediaQuery($labtop-4k) {
+        @include GridStyle($template-main-body-labtop-4k, $row);
+    }
+
+    .navigation {
+        background: url(../images/background-piano-page.jpg) $background-style;
+        width: 100%;
+        height: 100%;
+        background-size: cover;
+    }
+
+    .products {
+        width: 100%;
+        height: 100%;
+        @include GridStyle($template-main-products, $column);
+        gap: 0.5vw;
+
+        @include MediaQuery($mobile-l) {
+            grid-template-columns: repeat(2, 1fr);
+        }
+
+        @include MediaQuery($mobile-m) {
+            grid-template-columns: repeat(2, 1fr);
+        }
+
+        @include MediaQuery($mobile-s) {
+            grid-template-columns: repeat(2, 1fr);
+        }
+        .product {
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            border: 2px groove #8080805e;
+            position: relative;
+            @include GridStyle($template-main-description, $row);
+
+            &:hover .card {
+                grid-template-rows: 40% 60%;
+            }
+            &:hover .imgBX {
+                transform: scale(.7);
+                transition: transform .5s;
+            }
+            &:hover .contentBX {
+                @include GridStyle($template-main-products, $row);
+            }
+            &:hover .title {
+                grid-row: 1/2;
+                transition: grid-row 0.5s;
+            }
+            &:hover .price {
+                grid-row: 2/3;
+                transition: grid-row .5s .5s;
+            }
+            &:hover .button {
+                bottom: 0;
+                transition: all 0.5s 0.5s;
+            }
+            
+            .card {
+                position: relative;
+                width: 100%;
+                height: 100%;
+                background: transparent;
+                overflow: hidden;
+                @include GridStyle($template-imgBX, $row);
+
+                &:hover:before {
+                    clip-path: polygon(0 1%, 100% 0%, 100% 50%, 0 0);
+                }
+                &::before {
+                    content: "";
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    width: 100%;
+                    height: 100%;
+                    clip-path: polygon(0 1%, 100% 0%, 100% 0, 0 50%);
+                    transition: .5s ease-in-out;
+                }
+            }
+            .card1::before{
+                background-color: $color-fifth;
+            }
+            .card2::before{
+                background-color: $color-third;
+            }
+            .card3::before{
+                background-color: $charcoal;
+            }
+            .card4::before{
+                background-color: $color-sixth;
+            }
+            .card5::before{
+                background-color: $color-second
+            }
+            .card6::before{
+                background-color: $color-first;
+            }
+
+            .imgBX {
+                @include Flexstyle;
+                width: 100%;
+                transform: scale(1); 
+                transition: transform 0.5s;
+
+                img {
+                    z-index: 100000;
+                    width: 11vw;
+                }
+            }
+
+            .contentBX{
+                width: 100%;
+                height: 100%;
+                transition: 1s;
+                z-index: 10;
+                @include GridStyle($template-contentBX, $row);
+            }
+
+            .title {
+                @include titleStyle;
+            }
+
+            .price {
+                @include priceStyle;
+            }
+
+            .button {
+
+                &:focus {
+                    @include buttonHover;
+                    width: 4vw;
+                    height: 4vw;
+                }
+                &:focus span {
+                    display: none;
+                }
+                &:focus i.bi.bi-check2-all {
+                    display: block;
+                    transition: display .5s;
+                }
+                i.bi.bi-check2-all {
+                    display: none;
+                }
+            }
+            .button-1 {
+                @include buttonStyle($color-fifth);
+            }
+            .button-2 {
+                @include buttonStyle($color-third);
+            }
+            .button-3 {
+                @include buttonStyle($charcoal);
+            }
+            .button-4 {
+                @include buttonStyle($color-sixth);
+            }
+            .button-5 {
+                @include buttonStyle($color-second);
+            }
+            .button-6 {
+                @include buttonStyle($color-first);
+            }
+        }
+    }
+
+    .description {
+        @include descriptionStyle;
+    }
+
+    .footer {
+        width: 100%;
+        border-top: 2px groove #28262647;
+    
+        .social {
+            width: 100%;
+            height: 10vw;
+            display: grid;
+            justify-items: center;
+    
+            ul {
+                @include GridStyle($template-Footer-UL, $column);
+                width: 40%;
+                padding-top: 1vw;
+    
+                li {
+                    width: 100%;
+                    height: 100%;
+                    @include Flexstyle;
+                    position: relative;
+    
+                    &:hover a {
+                        color: white;
+                    }
+    
+                    &:hover .d1 {
+                        @include hoverH
+                    }
+    
+                    &:hover .d2 {
+                        @include hoverW
+                    }
+    
+                    &:hover .d3 {
+                        @include hoverW
+                    }
+    
+                    &:hover .d4 {
+                        @include hoverH
+                    }
+                }
+    
+                .d1 {
+                    width: 100%;
+                    height: 15%;
+                    background-color: $color-forth;
+                    border-top-left-radius: 5px;
+                    @include styleDiv('top');
+                    transition: height .3s;
+                }
+    
+                .d2 {
+                    border-top-right-radius: 5px;
+                    width: 15%;
+                    height: 100%;
+                    background-color: #cc5539;
+                    @include styleDiv('left');
+                }
+    
+                .d3 {
+                    border-top-right-radius: 5px;
+                    border-top-left-radius: 5px;
+                    width: 15%;
+                    height: 100%;
+                    background-color: $color-sixth;
+                    @include styleDiv('right');
+                }
+    
+                .d4 {
+                    width: 100%;
+                    height: 15%;
+                    background-color: $color-third;
+                    border-top-right-radius: 5px;
+                    @include styleDiv('bottom');
+                }
+    
+                a {
+                    font-size: 3vw;
+                    color: $color-fifth;
+                    z-index: 2;
+                }
+            }
+        }
+    }    
+}

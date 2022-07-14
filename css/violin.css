@@ -1,0 +1,665 @@
+/* main page colors */
+/* main page colors */
+/* voilin page colors */
+/* voilin page colors */
+/* font pages */
+/* font pages */
+/* media for Responsive */
+/* media for Responsive */
+body .products .product {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  border-radius: 5px;
+  position: relative;
+  border: 1px groove rgb(56, 52, 52);
+}
+
+/*  Footer */
+/* Footer */
+body {
+  width: 100%;
+  min-height: 100vh;
+  display: grid;
+  justify-items: center;
+  align-items: center;
+  grid-template-rows: 30% 80% 40% 10%;
+}
+@media all and (max-width: 425px) {
+  body {
+    grid-template-rows: 50% 80% 50% 10%;
+  }
+}
+body .header {
+  background: url(../images/background-violin-page.jpg) center no-repeat;
+  background-size: cover;
+  background-position: inherit;
+  width: 100%;
+  height: 100%;
+}
+body .products {
+  width: 100%;
+  height: 100%;
+  display: grid;
+  justify-items: center;
+  align-items: center;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2vw;
+}
+@media all and (max-width: 425px) {
+  body .products {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+body .products .product:hover .overlay {
+  left: 0;
+  transition: left 0.5s;
+}
+body .products .product .overlay1 {
+  font-family: "Dancing Script", monospace;
+  font-size: 1.5rem;
+  height: 100%;
+  width: 100%;
+  display: grid;
+  justify-items: center;
+  align-items: center;
+  grid-template-rows: repeat(3, 1fr);
+  position: absolute;
+  left: -100%;
+  top: 0;
+  z-index: 10;
+  transition: left 0.5s;
+  background-color: rgba(218, 152, 122, 0.8);
+}
+body .products .product .overlay1 .buy {
+  width: 50%;
+  height: 50%;
+  font-family: "Dancing Script";
+  color: black;
+  font-size: 1.5rem;
+  font-weight: bold;
+  background: transparent;
+  border: 2px groove black;
+  background-color: #da987a;
+}
+body .products .product .overlay1 .buy:focus i.bi.bi-bag-heart-fill {
+  display: block;
+  color: rgba(255, 0, 149, 0.87);
+  font-size: 3rem;
+}
+@media all and (min-width: 1024px) {
+  body .products .product .overlay1 .buy:focus i.bi.bi-bag-heart-fill {
+    font-size: 3rem;
+  }
+}
+@media all and (min-width: 1440px) {
+  body .products .product .overlay1 .buy:focus i.bi.bi-bag-heart-fill {
+    font-size: 3.5rem;
+  }
+}
+@media all and (min-width: 2560px) {
+  body .products .product .overlay1 .buy:focus i.bi.bi-bag-heart-fill {
+    font-size: 8rem;
+  }
+}
+@media all and (max-width: 425px) {
+  body .products .product .overlay1 .buy:focus i.bi.bi-bag-heart-fill {
+    font-size: 1.5rem;
+  }
+}
+@media all and (max-width: 375px) {
+  body .products .product .overlay1 .buy:focus i.bi.bi-bag-heart-fill {
+    font-size: 1.5rem;
+  }
+}
+@media all and (max-width: 320px) {
+  body .products .product .overlay1 .buy:focus i.bi.bi-bag-heart-fill {
+    font-size: 1.5rem;
+  }
+}
+body .products .product .img1 {
+  position: absolute;
+  background-size: contain !important;
+  width: 100%;
+  height: 100%;
+  background: url(../images/violin-1.jpg) center no-repeat;
+}
+body .products .product .overlay2 {
+  font-family: "Dancing Script", monospace;
+  font-size: 1.5rem;
+  height: 100%;
+  width: 100%;
+  display: grid;
+  justify-items: center;
+  align-items: center;
+  grid-template-rows: repeat(3, 1fr);
+  position: absolute;
+  left: -100%;
+  top: 0;
+  z-index: 10;
+  transition: left 0.5s;
+  background-color: rgba(100, 37, 22, 0.8);
+}
+body .products .product .overlay2 .buy {
+  width: 50%;
+  height: 50%;
+  font-family: "Dancing Script";
+  color: black;
+  font-size: 1.5rem;
+  font-weight: bold;
+  background: transparent;
+  border: 2px groove black;
+  background-color: #642516;
+}
+body .products .product .overlay2 .buy:focus i.bi.bi-bag-heart-fill {
+  display: block;
+  color: rgba(53, 52, 52, 0.87);
+  font-size: 3rem;
+}
+@media all and (min-width: 1024px) {
+  body .products .product .overlay2 .buy:focus i.bi.bi-bag-heart-fill {
+    font-size: 3rem;
+  }
+}
+@media all and (min-width: 1440px) {
+  body .products .product .overlay2 .buy:focus i.bi.bi-bag-heart-fill {
+    font-size: 3.5rem;
+  }
+}
+@media all and (min-width: 2560px) {
+  body .products .product .overlay2 .buy:focus i.bi.bi-bag-heart-fill {
+    font-size: 8rem;
+  }
+}
+@media all and (max-width: 425px) {
+  body .products .product .overlay2 .buy:focus i.bi.bi-bag-heart-fill {
+    font-size: 1.5rem;
+  }
+}
+@media all and (max-width: 375px) {
+  body .products .product .overlay2 .buy:focus i.bi.bi-bag-heart-fill {
+    font-size: 1.5rem;
+  }
+}
+@media all and (max-width: 320px) {
+  body .products .product .overlay2 .buy:focus i.bi.bi-bag-heart-fill {
+    font-size: 1.5rem;
+  }
+}
+body .products .product .img2 {
+  position: absolute;
+  background-size: contain !important;
+  width: 100%;
+  height: 100%;
+  background: url(../images/violin-2.jpg) center no-repeat;
+}
+@media all and (max-width: 425px) {
+  body .products .product .img2 {
+    background-size: contain !important;
+  }
+}
+body .products .product .overlay3 {
+  font-family: "Dancing Script", monospace;
+  font-size: 1.5rem;
+  height: 100%;
+  width: 100%;
+  display: grid;
+  justify-items: center;
+  align-items: center;
+  grid-template-rows: repeat(3, 1fr);
+  position: absolute;
+  left: -100%;
+  top: 0;
+  z-index: 10;
+  transition: left 0.5s;
+  background-color: rgba(243, 212, 188, 0.8);
+}
+body .products .product .overlay3 .buy {
+  width: 50%;
+  height: 50%;
+  font-family: "Dancing Script";
+  color: black;
+  font-size: 1.5rem;
+  font-weight: bold;
+  background: transparent;
+  border: 2px groove black;
+  background-color: #f3d4bc;
+}
+body .products .product .overlay3 .buy:focus i.bi.bi-bag-heart-fill {
+  display: block;
+  color: rgba(168, 155, 155, 0.87);
+  font-size: 3rem;
+}
+@media all and (min-width: 1024px) {
+  body .products .product .overlay3 .buy:focus i.bi.bi-bag-heart-fill {
+    font-size: 3rem;
+  }
+}
+@media all and (min-width: 1440px) {
+  body .products .product .overlay3 .buy:focus i.bi.bi-bag-heart-fill {
+    font-size: 3.5rem;
+  }
+}
+@media all and (min-width: 2560px) {
+  body .products .product .overlay3 .buy:focus i.bi.bi-bag-heart-fill {
+    font-size: 8rem;
+  }
+}
+@media all and (max-width: 425px) {
+  body .products .product .overlay3 .buy:focus i.bi.bi-bag-heart-fill {
+    font-size: 1.5rem;
+  }
+}
+@media all and (max-width: 375px) {
+  body .products .product .overlay3 .buy:focus i.bi.bi-bag-heart-fill {
+    font-size: 1.5rem;
+  }
+}
+@media all and (max-width: 320px) {
+  body .products .product .overlay3 .buy:focus i.bi.bi-bag-heart-fill {
+    font-size: 1.5rem;
+  }
+}
+body .products .product .img3 {
+  position: absolute;
+  background-size: contain !important;
+  width: 100%;
+  height: 100%;
+  background: url(../images/violin-3.jpg) center no-repeat;
+}
+@media all and (max-width: 425px) {
+  body .products .product .img3 {
+    background-size: contain !important;
+  }
+}
+body .products .product .overlay4 {
+  font-family: "Dancing Script", monospace;
+  font-size: 1.5rem;
+  height: 100%;
+  width: 100%;
+  display: grid;
+  justify-items: center;
+  align-items: center;
+  grid-template-rows: repeat(3, 1fr);
+  position: absolute;
+  left: -100%;
+  top: 0;
+  z-index: 10;
+  transition: left 0.5s;
+  background-color: rgba(43, 10, 7, 0.8);
+}
+body .products .product .overlay4 .buy {
+  width: 50%;
+  height: 50%;
+  font-family: "Dancing Script";
+  color: black;
+  font-size: 1.5rem;
+  font-weight: bold;
+  background: transparent;
+  border: 2px groove black;
+  background-color: #2b0a07;
+}
+body .products .product .overlay4 .buy:focus i.bi.bi-bag-heart-fill {
+  display: block;
+  color: rgba(6, 7, 110, 0.87);
+  font-size: 3rem;
+}
+@media all and (min-width: 1024px) {
+  body .products .product .overlay4 .buy:focus i.bi.bi-bag-heart-fill {
+    font-size: 3rem;
+  }
+}
+@media all and (min-width: 1440px) {
+  body .products .product .overlay4 .buy:focus i.bi.bi-bag-heart-fill {
+    font-size: 3.5rem;
+  }
+}
+@media all and (min-width: 2560px) {
+  body .products .product .overlay4 .buy:focus i.bi.bi-bag-heart-fill {
+    font-size: 8rem;
+  }
+}
+@media all and (max-width: 425px) {
+  body .products .product .overlay4 .buy:focus i.bi.bi-bag-heart-fill {
+    font-size: 1.5rem;
+  }
+}
+@media all and (max-width: 375px) {
+  body .products .product .overlay4 .buy:focus i.bi.bi-bag-heart-fill {
+    font-size: 1.5rem;
+  }
+}
+@media all and (max-width: 320px) {
+  body .products .product .overlay4 .buy:focus i.bi.bi-bag-heart-fill {
+    font-size: 1.5rem;
+  }
+}
+body .products .product .img4 {
+  position: absolute;
+  background-size: contain !important;
+  width: 100%;
+  height: 100%;
+  background: url(../images/violin-4.jpg) center no-repeat;
+}
+@media all and (max-width: 425px) {
+  body .products .product .img4 {
+    background-size: contain !important;
+  }
+}
+body .products .product .overlay5 {
+  font-family: "Dancing Script", monospace;
+  font-size: 1.5rem;
+  height: 100%;
+  width: 100%;
+  display: grid;
+  justify-items: center;
+  align-items: center;
+  grid-template-rows: repeat(3, 1fr);
+  position: absolute;
+  left: -100%;
+  top: 0;
+  z-index: 10;
+  transition: left 0.5s;
+  background-color: rgba(252, 233, 219, 0.8);
+}
+body .products .product .overlay5 .buy {
+  width: 50%;
+  height: 50%;
+  font-family: "Dancing Script";
+  color: black;
+  font-size: 1.5rem;
+  font-weight: bold;
+  background: transparent;
+  border: 2px groove black;
+  background-color: #fce9db;
+}
+body .products .product .overlay5 .buy:focus i.bi.bi-bag-heart-fill {
+  display: block;
+  color: rgba(129, 23, 161, 0.87);
+  font-size: 3rem;
+}
+@media all and (min-width: 1024px) {
+  body .products .product .overlay5 .buy:focus i.bi.bi-bag-heart-fill {
+    font-size: 3rem;
+  }
+}
+@media all and (min-width: 1440px) {
+  body .products .product .overlay5 .buy:focus i.bi.bi-bag-heart-fill {
+    font-size: 3.5rem;
+  }
+}
+@media all and (min-width: 2560px) {
+  body .products .product .overlay5 .buy:focus i.bi.bi-bag-heart-fill {
+    font-size: 8rem;
+  }
+}
+@media all and (max-width: 425px) {
+  body .products .product .overlay5 .buy:focus i.bi.bi-bag-heart-fill {
+    font-size: 1.5rem;
+  }
+}
+@media all and (max-width: 375px) {
+  body .products .product .overlay5 .buy:focus i.bi.bi-bag-heart-fill {
+    font-size: 1.5rem;
+  }
+}
+@media all and (max-width: 320px) {
+  body .products .product .overlay5 .buy:focus i.bi.bi-bag-heart-fill {
+    font-size: 1.5rem;
+  }
+}
+body .products .product .img5 {
+  position: absolute;
+  background-size: contain !important;
+  width: 100%;
+  height: 100%;
+  background: url(../images/violin-5.jpg) center no-repeat;
+}
+@media all and (max-width: 425px) {
+  body .products .product .img5 {
+    background-size: contain !important;
+  }
+}
+body .products .product .overlay6 {
+  font-family: "Dancing Script", monospace;
+  font-size: 1.5rem;
+  height: 100%;
+  width: 100%;
+  display: grid;
+  justify-items: center;
+  align-items: center;
+  grid-template-rows: repeat(3, 1fr);
+  position: absolute;
+  left: -100%;
+  top: 0;
+  z-index: 10;
+  transition: left 0.5s;
+  background-color: rgba(204, 84, 57, 0.8);
+}
+body .products .product .overlay6 .buy {
+  width: 50%;
+  height: 50%;
+  font-family: "Dancing Script";
+  color: black;
+  font-size: 1.5rem;
+  font-weight: bold;
+  background: transparent;
+  border: 2px groove black;
+  background-color: #cc5539;
+}
+body .products .product .overlay6 .buy:focus i.bi.bi-bag-heart-fill {
+  display: block;
+  color: rgba(99, 66, 4, 0.87);
+  font-size: 3rem;
+}
+@media all and (min-width: 1024px) {
+  body .products .product .overlay6 .buy:focus i.bi.bi-bag-heart-fill {
+    font-size: 3rem;
+  }
+}
+@media all and (min-width: 1440px) {
+  body .products .product .overlay6 .buy:focus i.bi.bi-bag-heart-fill {
+    font-size: 3.5rem;
+  }
+}
+@media all and (min-width: 2560px) {
+  body .products .product .overlay6 .buy:focus i.bi.bi-bag-heart-fill {
+    font-size: 8rem;
+  }
+}
+@media all and (max-width: 425px) {
+  body .products .product .overlay6 .buy:focus i.bi.bi-bag-heart-fill {
+    font-size: 1.5rem;
+  }
+}
+@media all and (max-width: 375px) {
+  body .products .product .overlay6 .buy:focus i.bi.bi-bag-heart-fill {
+    font-size: 1.5rem;
+  }
+}
+@media all and (max-width: 320px) {
+  body .products .product .overlay6 .buy:focus i.bi.bi-bag-heart-fill {
+    font-size: 1.5rem;
+  }
+}
+body .products .product .img6 {
+  position: absolute;
+  background-size: contain !important;
+  width: 100%;
+  height: 100%;
+  background: url(../images/violin-6.jpg) center no-repeat;
+}
+@media all and (max-width: 425px) {
+  body .products .product .img6 {
+    background-size: contain !important;
+  }
+}
+body .products .product i.bi.bi-bag-heart-fill {
+  display: none;
+}
+body .products .product .buy:focus {
+  background: transparent;
+  border: none;
+}
+body .products .product .buy:focus span {
+  display: none;
+}
+@media all and (min-width: 1024px) {
+  body .products .product .overlay {
+    font-size: 2rem;
+  }
+}
+@media all and (min-width: 1440px) {
+  body .products .product .overlay {
+    font-size: 2.5rem;
+  }
+}
+@media all and (min-width: 2560px) {
+  body .products .product .overlay {
+    font-size: 5rem;
+  }
+}
+@media all and (max-width: 425px) {
+  body .products .product .overlay {
+    font-size: 1rem;
+  }
+}
+@media all and (max-width: 375px) {
+  body .products .product .overlay {
+    font-size: 1rem;
+  }
+}
+@media all and (max-width: 320px) {
+  body .products .product .overlay {
+    font-size: 0.9rem;
+  }
+}
+@media all and (min-width: 1024px) {
+  body .products .product .buy {
+    font-size: 2rem !important;
+  }
+}
+@media all and (min-width: 1440px) {
+  body .products .product .buy {
+    font-size: 2rem !important;
+  }
+}
+@media all and (min-width: 2560px) {
+  body .products .product .buy {
+    font-size: 3rem !important;
+  }
+}
+@media all and (max-width: 425px) {
+  body .products .product .buy {
+    font-size: 1rem !important;
+  }
+}
+@media all and (max-width: 375px) {
+  body .products .product .buy {
+    font-size: 1rem !important;
+  }
+}
+@media all and (max-width: 320px) {
+  body .products .product .buy {
+    font-size: 0.9rem !important;
+  }
+}
+body .video {
+  width: 100%;
+  height: -webkit-fill-available;
+}
+body .video-violin {
+  width: 100%;
+  height: 100%;
+}
+body .footer {
+  width: 100%;
+  height: 100%;
+  display: grid;
+  justify-items: center;
+  align-items: center;
+  border-top: 2px groove rgba(40, 38, 38, 0.2784313725);
+}
+body .footer .social {
+  width: 100%;
+  height: 100%;
+  display: grid;
+  justify-items: center;
+}
+body .footer .social ul {
+  display: grid;
+  justify-items: center;
+  align-items: center;
+  grid-template-columns: repeat(4, 1fr);
+  width: 80%;
+}
+body .footer .social ul li {
+  width: 100%;
+  height: 100%;
+  display: grid;
+  justify-items: center;
+  align-items: center;
+  position: relative;
+}
+body .footer .social ul li:hover a {
+  color: white;
+}
+body .footer .social ul li:hover .d1 {
+  height: 100%;
+  transition: height 0.3s;
+}
+body .footer .social ul li:hover .d2 {
+  width: 100%;
+  transition: width 0.3s;
+}
+body .footer .social ul li:hover .d3 {
+  width: 100%;
+  transition: width 0.3s;
+}
+body .footer .social ul li:hover .d4 {
+  height: 100%;
+  transition: height 0.3s;
+}
+body .footer .social ul .d1 {
+  width: 100%;
+  height: 15%;
+  background-color: #f69d17;
+  border-top-left-radius: 5px;
+  position: absolute;
+  top: 0;
+  z-index: 1;
+  transition: height 0.3s;
+}
+body .footer .social ul .d2 {
+  border-top-right-radius: 5px;
+  width: 15%;
+  height: 100%;
+  background-color: #cc5539;
+  position: absolute;
+  left: 0;
+  z-index: 1;
+}
+body .footer .social ul .d3 {
+  border-top-right-radius: 5px;
+  border-top-left-radius: 5px;
+  width: 15%;
+  height: 100%;
+  background-color: #e4b362;
+  position: absolute;
+  right: 0;
+  z-index: 1;
+}
+body .footer .social ul .d4 {
+  width: 100%;
+  height: 15%;
+  background-color: #ad726d;
+  border-top-right-radius: 5px;
+  position: absolute;
+  bottom: 0;
+  z-index: 1;
+}
+body .footer .social ul a {
+  font-size: 3vw;
+  color: #394650;
+  z-index: 2;
+}/*# sourceMappingURL=violin.css.map */

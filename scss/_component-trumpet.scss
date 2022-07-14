@@ -1,0 +1,550 @@
+$font-dancing : 'Dancing Script',
+monospace;
+$font-Josefin : 'Josefin Sans',
+cursive;
+$font-Nunito : 'Nunito',
+cursive;
+$font-Marvel : 'Marvel';
+
+$dark-liver-horses: #573628ff;
+$dark-sienna: #361915ff;
+$coffee: #7C5337ff;
+$dark-sienna-2: #381A17ff;
+$cafe-au-lait: #A47546ff;
+// -----------------------------------------------------------------------------
+$row : rows;
+$column : columns;
+
+@mixin GridStyle($templates, $style) {
+    display: grid;
+    align-items: center;
+    justify-items: center;
+    grid-template-#{$style}: $templates;
+}
+
+/* ------------- */
+$r : row;
+$c : column;
+/* ------------- */
+$space-evenly : space-evenly;
+$center : center;
+$space-around : space-around;
+/* ------------- */
+@mixin FlexStyle($flex-direction, $justify-content) {
+    display: flex;
+    flex-direction: $flex-direction;
+    flex-wrap: nowrap;
+    justify-content: $justify-content;
+    align-items: center;
+}
+
+/* Template for body */
+$template-body-mobile-l : 40.5% 150% 40% 10%;
+$template-body-mobile-m : 36% 150% 40% 10%;
+$template-body-mobile-s : 30% 150% 40% 10%;
+$template-body-other-devices : 50% 100% 40% 20%; // background-size : cover;
+/* Template for body */
+
+/* Template for products */
+$template-products-small-devices : 1fr;
+$template-products-large-devices : repeat(2, 1fr);
+/* Template for products */
+
+/* screens */
+$labtop : 1024px;
+$labtop-lg : 1440px;
+$labtop-4k : 2560px;
+$mobile-l : 425px;
+$mobile-m : 375px;
+$mobile-s : 320px;
+/* screens */
+
+/* font size */
+$font-labtop-4k : 3rem;
+$font-labtop-AND-lg : 1.5rem;
+$font-tablet : 1rem;
+/* font size */
+
+@mixin MediaQuery($screen) {
+    @if $screen==$mobile-l {
+        @media all and (max-width : $screen) {
+            @content;
+        }
+    }
+
+    @else if $screen==$mobile-m {
+        @media all and (max-width : $screen) {
+            @content;
+        }
+    }
+
+    @else if $screen==$mobile-s {
+        @media all and (max-width : $screen) {
+            @content;
+        }
+    }
+
+    @else if $screen==$labtop {
+        @media all and (min-width : $screen) {
+            @content;
+        }
+    }
+
+    @else if $screen==$labtop-lg {
+        @media all and (min-width : $screen) {
+            @content;
+        }
+    }
+
+    @else if $screen==$labtop-4k {
+        @media all and (min-width : $screen) {
+            @content;
+        }
+    }
+}
+
+$shadow-red : #f99393;
+$shadow-gray : #808080a9;
+$shadow-green : #00800081;
+$shadow-white : #c2c0c0;
+$shadow-orange : #ffa60094;
+$shadow-yellow : #ffff0098;
+
+@mixin img-style($shadow) {
+    width: 100%;
+    height: 100%;
+    box-shadow: inset 0px 0px 20px 0px $shadow;
+}
+
+@mixin overlay {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    background: url(../images/Stars\ Shooting\ GIF.gif) center no-repeat;
+    background-size: cover;
+    opacity: .8;
+}
+
+@mixin info {
+    width: 100%;
+    height: 100%;
+    @include FlexStyle($c, $space-evenly);
+    font-family: $font-Marvel;
+    font-weight: bold;
+}
+
+// -----------------------------------------------------------------------------
+$color-11 : #CD5E62ff;
+/**/
+$color-21 : #F2EBE1ff;
+/**/
+$color-31 : #F58C50ff;
+/**/
+$color-41 : #E4E3E2ff;
+/**/
+$color-51 : #09643Eff;
+/**/
+$color-61 : #454343ff;
+$color-12 : #E7D5D4ff;
+/**/
+$color-22 : #CAB298ff;
+/**/
+$color-32 : #D24221ff;
+/**/
+$color-42 : #91908Eff;
+/**/
+$color-52 : #383531ff;
+/**/
+$color-62 : #6B6A69ff;
+$color-13 : #890D10ff;
+/**/
+$color-23 : #D9B77Bff;
+/**/
+$color-33 : #443835ff;
+/**/
+$color-43 : #A9A7A6ff;
+/**/
+$color-53 : #749984ff;
+/**/
+$color-63 : #4D4A49ff;
+
+@mixin colors($width, $color-select) {
+    width: $width;
+    height: $width;
+    background-color: $color-select;
+    border-radius: 5px;
+}
+
+// -----------------------------------------------------------------------------
+body {
+    width: 100%;
+    height: 100vh;
+    gap: 1vw;
+    @include GridStyle($template-body-other-devices, $row);
+
+    @include MediaQuery($mobile-l) {
+        grid-template-rows: $template-body-mobile-l;
+    }
+
+    @include MediaQuery($mobile-m) {
+        grid-template-rows: $template-body-mobile-m;
+    }
+
+    @include MediaQuery($mobile-s) {
+        grid-template-rows: $template-body-mobile-s;
+    }
+
+    .header {
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(rgb(70 70 70 / 40%), rgb(10 9 9 / 40%)), url(../images/background-trumpet-page.jpg) center no-repeat;
+        background-size: cover;
+
+        @include MediaQuery($mobile-l) {
+            background-size: contain;
+        }
+
+        @include MediaQuery($mobile-m) {
+            background-size: contain;
+        }
+
+        @include MediaQuery($mobile-s) {
+            background-size: contain;
+        }
+    }
+
+    .products {
+        width: 100%;
+        height: 100%;
+        gap: 0.5vw;
+        overflow: hidden;
+        @include GridStyle($template-products-large-devices, $column);
+
+        @include MediaQuery($mobile-l) {
+            @include GridStyle($template-products-small-devices, $column);
+        }
+
+        @include MediaQuery($mobile-m) {
+            @include GridStyle($template-products-small-devices, $column);
+        }
+
+        @include MediaQuery($mobile-s) {
+            @include GridStyle($template-products-small-devices, $column);
+        }
+
+        .product {
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            @include GridStyle($template-products-large-devices, $column);
+
+            .img1 {
+                @include img-style($shadow-red);
+                background: url(../images/Trumpet-1.jpg) center no-repeat;
+                background-size: cover;
+            }
+
+            .color11 {
+                @include colors(3vw, $color-11);
+            }
+
+            .color12 {
+                @include colors(3vw, $color-12);
+            }
+
+            .color13 {
+                @include colors(3vw, $color-13);
+            }
+
+            .img2 {
+                @include img-style($shadow-yellow);
+                background: url(../images/Trumpet-2.jpg) center no-repeat;
+                background-size: cover;
+            }
+
+            .color21 {
+                @include colors(3vw, $color-21);
+            }
+
+            .color22 {
+                @include colors(3vw, $color-22);
+            }
+
+            .color23 {
+                @include colors(3vw, $color-23);
+            }
+
+            .img3 {
+                @include img-style($shadow-orange);
+                background: url(../images/Trumpet-3.jpg) center no-repeat;
+                background-size: cover;
+            }
+
+            .color31 {
+                @include colors(3vw, $color-31);
+            }
+
+            .color32 {
+                @include colors(3vw, $color-32);
+            }
+
+            .color33 {
+                @include colors(3vw, $color-33);
+            }
+
+            .img4 {
+                @include img-style($shadow-white);
+                background: url(../images/Trumpet-4.jpg) center no-repeat;
+                background-size: cover;
+            }
+
+            .color41 {
+                @include colors(3vw, $color-41);
+            }
+
+            .color42 {
+                @include colors(3vw, $color-42);
+            }
+
+            .color43 {
+                @include colors(3vw, $color-43);
+            }
+
+            .img5 {
+                @include img-style($shadow-green);
+                background: url(../images/Trumpet-5.jpg) center no-repeat;
+                background-size: cover;
+            }
+
+            .color51 {
+                @include colors(3vw, $color-51);
+            }
+
+            .color52 {
+                @include colors(3vw, $color-52);
+            }
+
+            .color53 {
+                @include colors(3vw, $color-53);
+            }
+
+            .img6 {
+                @include img-style($shadow-gray);
+                background: url(../images/Trumpet-6.jpg) center no-repeat;
+                background-size: cover;
+            }
+
+            .color61 {
+                @include colors(3vw, $color-61);
+            }
+
+            .color62 {
+                @include colors(3vw, $color-62);
+            }
+
+            .color63 {
+                @include colors(3vw, $color-63);
+            }
+
+            .color {
+                @include MediaQuery($mobile-l) {
+                    width: 5vw;
+                    height: 5vw;
+                }
+
+                @include MediaQuery($mobile-m) {
+                    width: 5vw;
+                    height: 5vw;
+                }
+
+                @include MediaQuery($mobile-s) {
+                    width: 5vw;
+                    height: 5vw;
+                }
+            }
+        }
+
+        .right {
+            width: 100%;
+            height: 100%;
+            position: relative;
+
+            &:hover .overlay {
+                top: -100%;
+                transition: top .5s;
+            }
+
+            .overlay {
+                @include overlay;
+                transition: top .5s;
+            }
+
+            .info {
+                @include info;
+
+                .price,
+                .title {
+                    font-size: $font-tablet;
+
+                    @include MediaQuery($labtop) {
+                        font-size: $font-labtop-AND-lg;
+                    }
+
+                    @include MediaQuery($labtop-lg) {
+                        font-size: $font-labtop-AND-lg;
+                    }
+
+                    @include MediaQuery($labtop-4k) {
+                        font-size: $font-labtop-4k;
+                    }
+                }
+
+                .buy {
+                    border: none;
+                    height: 15%;
+                    width: 50%;
+                    border-radius: 10px;
+                    font-family: 'Marvel';
+                    font-size: 1rem;
+                    color: white;
+                    background: url(../images/1.gif) center no-repeat;
+                    background-size: cover;
+
+                    @include MediaQuery($labtop-4k) {
+                        font-size: 2rem;
+                    }
+                }
+            }
+
+            .colors {
+                width: 100%;
+                @include FlexStyle($r, $space-evenly);
+            }
+        }
+    }
+
+    .audio {
+        width: 100%;
+        height: 100%;
+        background: url(../images/gif-trumpet.gif) repeat;
+        background-size: contain;
+        @include FlexStyle($c, $center);
+
+        audio.trumpet-music {
+            width: 50%;
+
+            &::-webkit-media-controls-panel {
+                background-color: wheat;
+
+            }
+        }
+    }
+
+    .footer {
+        width: 100%;
+        height: 100%;
+
+        nav {
+            width: 100%;
+            height: 100%;
+
+            ul {
+                width: 100%;
+                height: 100%;
+                @include FlexStyle($r, $space-around);
+
+                li {
+                    @include FlexStyle($r,$center);
+                    border: 1px solid $dark-sienna;
+                    height: 10vw;
+                    width: 10vw;
+                    border-radius: 50%;
+                    box-shadow: inset 0px 0px 20px 13px $cafe-au-lait;
+                    background-color: $coffee;
+
+                    @include MediaQuery($mobile-s){
+                        height: 60%;
+                    }
+                    @include MediaQuery($labtop){
+                        width: 8vw;
+                        height: 8vw;
+                    }
+
+                    &::after{
+                        content: "";
+                        width: 12vw;
+                        height: 0.5vw;
+                        background: $dark-sienna;
+                        z-index: -1;
+                        position: absolute;
+                        box-shadow: 0px 0px 20px 5px $coffee;
+                        transition: all 0.5s;
+
+                        @include MediaQuery($mobile-s){
+                            width: 13%;
+                        }
+                        @include MediaQuery($labtop){
+                            width: 10vw;
+                            height: 0.4vw;
+                        }
+                    }
+                    &::before{
+                        content: "";
+                        width: 0.5vw;
+                        height: 12vw;
+                        background: #d9b77b;
+                        z-index: -1;
+                        position: absolute;
+                        box-shadow: 0px 0px 20px 5px #a47546;
+                        transition: all 0.5s;
+
+                        @include MediaQuery($mobile-s){
+                            height: 14vw !important;
+                        
+                        }
+                        @include MediaQuery($mobile-l){
+                            width: 0.7vw;
+                            height: 12vw;
+                        }
+                        @include MediaQuery($labtop){
+                            width: 0.4vw;
+                            height: 10vw;
+                        }
+                    }
+                    
+                   &:hover::before ,&:hover::after{
+                        transform: rotate(90deg);
+                        transition: transform .5s ease-out;
+                    }
+                    
+                   &:hover a {
+                        color: $color-22;
+                        text-shadow: 0 0 5px $coffee;
+                        transition: all 0.5s ease-out;
+                      }
+
+                      a{
+                        text-decoration: none;
+                        text-shadow: 0 0 5px white;
+                        font-size: 1rem;
+                        color: $dark-sienna-2;
+
+                        @include MediaQuery($mobile-s){
+                            font-size: .7rem;
+                        }
+                        @include MediaQuery($mobile-m){
+                            font-size: .7rem;
+                        }
+                        @include MediaQuery($mobile-l){
+                            font-size: .7rem;
+                        }
+                        @include MediaQuery($labtop-4k){
+                            font-size: 2rem;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

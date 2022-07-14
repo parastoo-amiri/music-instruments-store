@@ -1,0 +1,499 @@
+/* ------------- */
+/* ------------- */
+/* ------------- */
+/* Template for body */
+/* Template for body */
+/* Template for products */
+/* Template for products */
+/* screens */
+/* screens */
+/* font size */
+/* font size */
+/**/
+/**/
+/**/
+/**/
+/**/
+/**/
+/**/
+/**/
+/**/
+/**/
+/**/
+/**/
+/**/
+/**/
+/**/
+body {
+  width: 100%;
+  height: 100vh;
+  gap: 1vw;
+  display: grid;
+  align-items: center;
+  justify-items: center;
+  grid-template-rows: 50% 100% 40% 20%;
+}
+@media all and (max-width: 425px) {
+  body {
+    grid-template-rows: 40.5% 150% 40% 10%;
+  }
+}
+@media all and (max-width: 375px) {
+  body {
+    grid-template-rows: 36% 150% 40% 10%;
+  }
+}
+@media all and (max-width: 320px) {
+  body {
+    grid-template-rows: 30% 150% 40% 10%;
+  }
+}
+body .header {
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(rgba(70, 70, 70, 0.4), rgba(10, 9, 9, 0.4)), url(../images/background-trumpet-page.jpg) center no-repeat;
+  background-size: cover;
+}
+@media all and (max-width: 425px) {
+  body .header {
+    background-size: contain;
+  }
+}
+@media all and (max-width: 375px) {
+  body .header {
+    background-size: contain;
+  }
+}
+@media all and (max-width: 320px) {
+  body .header {
+    background-size: contain;
+  }
+}
+body .products {
+  width: 100%;
+  height: 100%;
+  gap: 0.5vw;
+  overflow: hidden;
+  display: grid;
+  align-items: center;
+  justify-items: center;
+  grid-template-columns: repeat(2, 1fr);
+}
+@media all and (max-width: 425px) {
+  body .products {
+    display: grid;
+    align-items: center;
+    justify-items: center;
+    grid-template-columns: 1fr;
+  }
+}
+@media all and (max-width: 375px) {
+  body .products {
+    display: grid;
+    align-items: center;
+    justify-items: center;
+    grid-template-columns: 1fr;
+  }
+}
+@media all and (max-width: 320px) {
+  body .products {
+    display: grid;
+    align-items: center;
+    justify-items: center;
+    grid-template-columns: 1fr;
+  }
+}
+body .products .product {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  display: grid;
+  align-items: center;
+  justify-items: center;
+  grid-template-columns: repeat(2, 1fr);
+}
+body .products .product .img1 {
+  width: 100%;
+  height: 100%;
+  box-shadow: inset 0px 0px 20px 0px #f99393;
+  background: url(../images/Trumpet-1.jpg) center no-repeat;
+  background-size: cover;
+}
+body .products .product .color11 {
+  width: 3vw;
+  height: 3vw;
+  background-color: #cd5e62;
+  border-radius: 5px;
+}
+body .products .product .color12 {
+  width: 3vw;
+  height: 3vw;
+  background-color: #e7d5d4;
+  border-radius: 5px;
+}
+body .products .product .color13 {
+  width: 3vw;
+  height: 3vw;
+  background-color: #890d10;
+  border-radius: 5px;
+}
+body .products .product .img2 {
+  width: 100%;
+  height: 100%;
+  box-shadow: inset 0px 0px 20px 0px rgba(255, 255, 0, 0.5960784314);
+  background: url(../images/Trumpet-2.jpg) center no-repeat;
+  background-size: cover;
+}
+body .products .product .color21 {
+  width: 3vw;
+  height: 3vw;
+  background-color: #f2ebe1;
+  border-radius: 5px;
+}
+body .products .product .color22 {
+  width: 3vw;
+  height: 3vw;
+  background-color: #cab298;
+  border-radius: 5px;
+}
+body .products .product .color23 {
+  width: 3vw;
+  height: 3vw;
+  background-color: #d9b77b;
+  border-radius: 5px;
+}
+body .products .product .img3 {
+  width: 100%;
+  height: 100%;
+  box-shadow: inset 0px 0px 20px 0px rgba(255, 166, 0, 0.5803921569);
+  background: url(../images/Trumpet-3.jpg) center no-repeat;
+  background-size: cover;
+}
+body .products .product .color31 {
+  width: 3vw;
+  height: 3vw;
+  background-color: #f58c50;
+  border-radius: 5px;
+}
+body .products .product .color32 {
+  width: 3vw;
+  height: 3vw;
+  background-color: #d24221;
+  border-radius: 5px;
+}
+body .products .product .color33 {
+  width: 3vw;
+  height: 3vw;
+  background-color: #443835;
+  border-radius: 5px;
+}
+body .products .product .img4 {
+  width: 100%;
+  height: 100%;
+  box-shadow: inset 0px 0px 20px 0px #c2c0c0;
+  background: url(../images/Trumpet-4.jpg) center no-repeat;
+  background-size: cover;
+}
+body .products .product .color41 {
+  width: 3vw;
+  height: 3vw;
+  background-color: #e4e3e2;
+  border-radius: 5px;
+}
+body .products .product .color42 {
+  width: 3vw;
+  height: 3vw;
+  background-color: #91908e;
+  border-radius: 5px;
+}
+body .products .product .color43 {
+  width: 3vw;
+  height: 3vw;
+  background-color: #a9a7a6;
+  border-radius: 5px;
+}
+body .products .product .img5 {
+  width: 100%;
+  height: 100%;
+  box-shadow: inset 0px 0px 20px 0px rgba(0, 128, 0, 0.5058823529);
+  background: url(../images/Trumpet-5.jpg) center no-repeat;
+  background-size: cover;
+}
+body .products .product .color51 {
+  width: 3vw;
+  height: 3vw;
+  background-color: #09643e;
+  border-radius: 5px;
+}
+body .products .product .color52 {
+  width: 3vw;
+  height: 3vw;
+  background-color: #383531;
+  border-radius: 5px;
+}
+body .products .product .color53 {
+  width: 3vw;
+  height: 3vw;
+  background-color: #749984;
+  border-radius: 5px;
+}
+body .products .product .img6 {
+  width: 100%;
+  height: 100%;
+  box-shadow: inset 0px 0px 20px 0px rgba(128, 128, 128, 0.662745098);
+  background: url(../images/Trumpet-6.jpg) center no-repeat;
+  background-size: cover;
+}
+body .products .product .color61 {
+  width: 3vw;
+  height: 3vw;
+  background-color: #454343;
+  border-radius: 5px;
+}
+body .products .product .color62 {
+  width: 3vw;
+  height: 3vw;
+  background-color: #6b6a69;
+  border-radius: 5px;
+}
+body .products .product .color63 {
+  width: 3vw;
+  height: 3vw;
+  background-color: #4d4a49;
+  border-radius: 5px;
+}
+@media all and (max-width: 425px) {
+  body .products .product .color {
+    width: 5vw;
+    height: 5vw;
+  }
+}
+@media all and (max-width: 375px) {
+  body .products .product .color {
+    width: 5vw;
+    height: 5vw;
+  }
+}
+@media all and (max-width: 320px) {
+  body .products .product .color {
+    width: 5vw;
+    height: 5vw;
+  }
+}
+body .products .right {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+body .products .right:hover .overlay {
+  top: -100%;
+  transition: top 0.5s;
+}
+body .products .right .overlay {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  background: url(../images/Stars\ Shooting\ GIF.gif) center no-repeat;
+  background-size: cover;
+  opacity: 0.8;
+  transition: top 0.5s;
+}
+body .products .right .info {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  justify-content: space-evenly;
+  align-items: center;
+  font-family: "Marvel";
+  font-weight: bold;
+}
+body .products .right .info .price,
+body .products .right .info .title {
+  font-size: 1rem;
+}
+@media all and (min-width: 1024px) {
+  body .products .right .info .price,
+body .products .right .info .title {
+    font-size: 1.5rem;
+  }
+}
+@media all and (min-width: 1440px) {
+  body .products .right .info .price,
+body .products .right .info .title {
+    font-size: 1.5rem;
+  }
+}
+@media all and (min-width: 2560px) {
+  body .products .right .info .price,
+body .products .right .info .title {
+    font-size: 3rem;
+  }
+}
+body .products .right .info .buy {
+  border: none;
+  height: 15%;
+  width: 50%;
+  border-radius: 10px;
+  font-family: "Marvel";
+  font-size: 1rem;
+  color: white;
+  background: url(../images/1.gif) center no-repeat;
+  background-size: cover;
+}
+@media all and (min-width: 2560px) {
+  body .products .right .info .buy {
+    font-size: 2rem;
+  }
+}
+body .products .right .colors {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-evenly;
+  align-items: center;
+}
+body .audio {
+  width: 100%;
+  height: 100%;
+  background: url(../images/gif-trumpet.gif) repeat;
+  background-size: contain;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-items: center;
+}
+body .audio audio.trumpet-music {
+  width: 50%;
+}
+body .audio audio.trumpet-music::-webkit-media-controls-panel {
+  background-color: wheat;
+}
+body .footer {
+  width: 100%;
+  height: 100%;
+}
+body .footer nav {
+  width: 100%;
+  height: 100%;
+}
+body .footer nav ul {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-around;
+  align-items: center;
+}
+body .footer nav ul li {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid #361915;
+  height: 10vw;
+  width: 10vw;
+  border-radius: 50%;
+  box-shadow: inset 0px 0px 20px 13px #a47546;
+  background-color: #7c5337;
+}
+@media all and (max-width: 320px) {
+  body .footer nav ul li {
+    height: 60%;
+  }
+}
+@media all and (min-width: 1024px) {
+  body .footer nav ul li {
+    width: 8vw;
+    height: 8vw;
+  }
+}
+body .footer nav ul li::after {
+  content: "";
+  width: 12vw;
+  height: 0.5vw;
+  background: #361915;
+  z-index: -1;
+  position: absolute;
+  box-shadow: 0px 0px 20px 5px #7c5337;
+  transition: all 0.5s;
+}
+@media all and (max-width: 320px) {
+  body .footer nav ul li::after {
+    width: 13%;
+  }
+}
+@media all and (min-width: 1024px) {
+  body .footer nav ul li::after {
+    width: 10vw;
+    height: 0.4vw;
+  }
+}
+body .footer nav ul li::before {
+  content: "";
+  width: 0.5vw;
+  height: 12vw;
+  background: #d9b77b;
+  z-index: -1;
+  position: absolute;
+  box-shadow: 0px 0px 20px 5px #a47546;
+  transition: all 0.5s;
+}
+@media all and (max-width: 320px) {
+  body .footer nav ul li::before {
+    height: 14vw !important;
+  }
+}
+@media all and (max-width: 425px) {
+  body .footer nav ul li::before {
+    width: 0.7vw;
+    height: 12vw;
+  }
+}
+@media all and (min-width: 1024px) {
+  body .footer nav ul li::before {
+    width: 0.4vw;
+    height: 10vw;
+  }
+}
+body .footer nav ul li:hover::before, body .footer nav ul li:hover::after {
+  transform: rotate(90deg);
+  transition: transform 0.5s ease-out;
+}
+body .footer nav ul li:hover a {
+  color: #cab298;
+  text-shadow: 0 0 5px #7c5337;
+  transition: all 0.5s ease-out;
+}
+body .footer nav ul li a {
+  text-decoration: none;
+  text-shadow: 0 0 5px white;
+  font-size: 1rem;
+  color: #381a17;
+}
+@media all and (max-width: 320px) {
+  body .footer nav ul li a {
+    font-size: 0.7rem;
+  }
+}
+@media all and (max-width: 375px) {
+  body .footer nav ul li a {
+    font-size: 0.7rem;
+  }
+}
+@media all and (max-width: 425px) {
+  body .footer nav ul li a {
+    font-size: 0.7rem;
+  }
+}
+@media all and (min-width: 2560px) {
+  body .footer nav ul li a {
+    font-size: 2rem;
+  }
+}/*# sourceMappingURL=trumpet.css.map */

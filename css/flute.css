@@ -1,0 +1,308 @@
+body .footer nav ul, body .footer nav, body .footer, body .main .products .img, body .main .products .card, body .main, body .header {
+  width: 100%;
+  height: 100%;
+}
+
+body {
+  width: 100%;
+  height: 100vh;
+  display: grid;
+  justify-items: center;
+  align-items: center;
+  grid-template-rows: 50% 200% 20%;
+}
+@media all and (max-width: 425px) {
+  body {
+    display: grid;
+    justify-items: center;
+    align-items: center;
+    grid-template-rows: 50% 400% 20%;
+  }
+}
+@media all and (max-width: 375px) {
+  body {
+    display: grid;
+    justify-items: center;
+    align-items: center;
+    grid-template-rows: 50% 400% 20%;
+  }
+}
+@media all and (max-width: 320px) {
+  body {
+    display: grid;
+    justify-items: center;
+    align-items: center;
+    grid-template-rows: 50% 400% 20%;
+  }
+}
+body .header {
+  background: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.8)), url(../images/background-flute-page.png) center no-repeat;
+  background-size: cover;
+}
+body .main {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  background: url(../images/background-flute-page.jpg) center no-repeat;
+  background-size: cover;
+}
+body .main .products {
+  -webkit-backdrop-filter: blur(4px);
+  backdrop-filter: blur(4px);
+  width: 95%;
+  height: 95%;
+  border-radius: 10px;
+  gap: 0.5vw;
+  display: grid;
+  justify-items: center;
+  align-items: center;
+  grid-template-columns: repeat(2, 1fr);
+}
+@media all and (max-width: 425px) {
+  body .main .products {
+    display: grid;
+    justify-items: center;
+    align-items: center;
+    grid-template-columns: 1fr;
+  }
+}
+@media all and (max-width: 375px) {
+  body .main .products {
+    display: grid;
+    justify-items: center;
+    align-items: center;
+    grid-template-columns: 1fr;
+  }
+}
+@media all and (max-width: 320px) {
+  body .main .products {
+    display: grid;
+    justify-items: center;
+    align-items: center;
+    grid-template-columns: 1fr;
+  }
+}
+body .main .products .card {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  border-radius: 10px;
+  background-color: rgba(6, 6, 6, 0.5);
+}
+body .main .products .img {
+  background-size: contain !important;
+  transform: scale(1);
+  transition: all 0.5s;
+}
+body .main .products .img:hover {
+  transform: scale(1.5);
+  transition: all 0.5s;
+}
+body .main .products .img1 {
+  background: url(../images/Flute-1.jpg) center no-repeat;
+}
+body .main .products .img2 {
+  background: url(../images/Flute-2.jpg) center no-repeat;
+}
+body .main .products .img3 {
+  background: url(../images/Flute-3.jpg) center no-repeat;
+}
+body .main .products .img4 {
+  background: url(../images/Flute-4.jpg) center no-repeat;
+}
+body .main .products .img5 {
+  background: url(../images/Flute-5.jpg) center no-repeat;
+}
+body .main .products .img6 {
+  background: url(../images/Flute-6.jpg) center no-repeat;
+}
+body .main .products .information {
+  width: 100%;
+  height: 50%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: space-evenly;
+  font-size: 1.5rem;
+  letter-spacing: 5px;
+  font-family: "Dancing Script", monospace;
+  color: white;
+}
+@media all and (min-width: 2560px) {
+  body .main .products .information {
+    font-size: 3rem;
+  }
+}
+body .main .products .information .button {
+  font-size: 1rem;
+  font-family: "Dancing Script";
+  width: 50%;
+  height: 25%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+}
+@media all and (min-width: 2560px) {
+  body .main .products .information .button {
+    font-size: 2rem;
+  }
+}
+body .main .products .information .button:focus .second {
+  display: block;
+  color: rgba(255, 0, 0, 0.664);
+}
+body .main .products .information .button:focus .first {
+  display: none;
+}
+body .main .products .information .button .second {
+  display: none;
+}
+body .footer {
+  background-color: rgba(56, 56, 56, 0.5);
+  border-radius: 15px;
+}
+body .footer nav ul {
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  justify-content: space-around;
+}
+body .footer nav ul li {
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  justify-content: center;
+  border: 1px solid #0e6478;
+  height: 8vw;
+  width: 8vw;
+  border-radius: 50%;
+  box-shadow: inset 0px 0px 20px 13px #70c5d0;
+  background-color: #ceeeec;
+}
+@media all and (max-width: 320px) {
+  body .footer nav ul li {
+    height: 15vw;
+    width: 15vw;
+  }
+}
+@media all and (max-width: 375px) {
+  body .footer nav ul li {
+    height: 15vw;
+    width: 15vw;
+  }
+}
+@media all and (max-width: 425px) {
+  body .footer nav ul li {
+    height: 15vw;
+    width: 15vw;
+  }
+}
+@media all and (min-width: 1024px) {
+  body .footer nav ul li {
+    width: 6vw;
+    height: 6vw;
+  }
+}
+@media all and (min-width: 1440px) {
+  body .footer nav ul li {
+    width: 5vw;
+    height: 5vw;
+  }
+}
+body .footer nav ul li::after {
+  content: "";
+  width: 9.5vw;
+  height: 0.4vw;
+  background: #0e6478;
+  z-index: -1;
+  position: absolute;
+  box-shadow: 0px 0px 20px 10px #70c5d0;
+  transition: all 0.5s;
+}
+@media all and (max-width: 320px) {
+  body .footer nav ul li::after {
+    width: 20vw;
+  }
+}
+@media all and (max-width: 375px) {
+  body .footer nav ul li::after {
+    width: 19vw;
+  }
+}
+@media all and (max-width: 425px) {
+  body .footer nav ul li::after {
+    width: 18vw;
+  }
+}
+@media all and (min-width: 1024px) {
+  body .footer nav ul li::after {
+    width: 7vw;
+    height: 0.3vw;
+  }
+}
+@media all and (min-width: 1440px) {
+  body .footer nav ul li::after {
+    width: 6vw;
+    height: 0.3vw;
+  }
+}
+body .footer nav ul li::before {
+  content: "";
+  width: 0.4vw;
+  height: 9.5vw;
+  background: #40a1b6;
+  z-index: -1;
+  position: absolute;
+  box-shadow: 0px 0px 20px 10px #70c5d0;
+  transition: all 0.5s;
+}
+@media all and (max-width: 320px) {
+  body .footer nav ul li::before {
+    height: 20vw !important;
+  }
+}
+@media all and (max-width: 375px) {
+  body .footer nav ul li::before {
+    height: 19vw;
+  }
+}
+@media all and (max-width: 425px) {
+  body .footer nav ul li::before {
+    height: 18vw;
+  }
+}
+@media all and (min-width: 1024px) {
+  body .footer nav ul li::before {
+    height: 7vw;
+    width: 0.3vw;
+  }
+}
+@media all and (min-width: 1440px) {
+  body .footer nav ul li::before {
+    height: 6vw;
+    width: 0.3vw;
+  }
+}
+body .footer nav ul li:hover::before, body .footer nav ul li:hover::after {
+  transform: rotate(90deg);
+  transition: transform 0.5s ease-out;
+}
+body .footer nav ul li:hover a {
+  color: darkcyan;
+  text-shadow: 0 0 5px lightgreen;
+  transition: all 0.5s ease-out;
+}
+body .footer nav ul li a {
+  text-decoration: none;
+  text-shadow: 0 0 5px white;
+  font-size: 1rem;
+  color: #0e6478;
+}
+@media all and (min-width: 2560px) {
+  body .footer nav ul li a {
+    font-size: 2rem;
+  }
+}/*# sourceMappingURL=flute.css.map */

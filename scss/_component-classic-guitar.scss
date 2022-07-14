@@ -1,0 +1,497 @@
+$font-dancing : 'Dancing Script',
+monospace;
+$font-Josefin : 'Josefin Sans',
+cursive;
+$font-Nunito : 'Nunito',
+cursive;
+$font-Marvel : 'Marvel';
+
+$blue-sapphire: #2A6983ff;
+$space-cadet: #23233Cff;
+$ou-crimson-red: #881E1Eff;
+$ou-crimson-red-opacity: #881e1e80;
+$ochre: #CC792Bff;
+$amaranth-red: #D9102Cff;
+$amaranth-red-opacity : #d9102cc2;
+$green-yellow-crayola: #DBDA90ff;
+$green-yellow-crayola-opacity: #dbda9070;
+
+// screen
+$mobile-s : 320px;
+$mobile-m : 375px;
+$mobile-l : 425px;
+$labtop : 1024px;
+$labtop-l : 1440px;
+$labtop-4k : 2560px;
+
+// screen
+@mixin MediaQuery($screen) {
+    @if $screen==$mobile-l {
+        @media all and (max-width : $screen) {
+            @content;
+        }
+    }
+
+    @else if $screen==$mobile-m {
+        @media all and (max-width : $screen) {
+            @content;
+        }
+    }
+
+    @else if $screen==$mobile-s {
+        @media all and (max-width : $screen) {
+            @content;
+        }
+    }
+
+    @else if $screen==$labtop {
+        @media all and (min-width : $screen) {
+            @content;
+        }
+    }
+
+    @else if $screen==$labtop-l {
+        @media all and (min-width : $screen) {
+            @content;
+        }
+    }
+
+    @else if $screen==$labtop-4k {
+        @media all and (min-width : $screen) {
+            @content;
+        }
+    }
+}
+
+// template
+$template-tablet : 40% 100% 15%;
+$template-mobile-devices : 20% 150% 15%;
+$template-labtop : 60% 100% 15%;
+$template-labtop-lg-4k : 65% 100% 15%;
+/* -------------------------------------- */
+$template-products : repeat(3, 1fr);
+$template-products-mobile : repeat(2, 1fr);
+$template-container : 60% 40%;
+$template-information : repeat(4, 1fr);
+$template-1fr : 1fr;
+// template
+
+// style
+$row : rows;
+$column : columns;
+
+// style
+@mixin GridStyle($template, $style) {
+    display: grid;
+    justify-items: center;
+    align-items: center;
+    grid-template-#{$style}: $template;
+}
+
+// justify-content
+$center : center;
+$space-evenly : space-evenly;
+$space-around : space-around;
+// justify-content
+// flex-direction
+$r : row;
+$c : column;
+
+// flex-direction
+@mixin FlexStyle($flex-direction, $justify-content) {
+    display: flex;
+    align-items: center;
+    flex-direction: $flex-direction;
+    justify-content: $justify-content;
+}
+
+%width-height {
+    width: 100%;
+    height: 100%;
+}
+%Style-headings {
+    font-size: 1rem;
+    font-family: $font-Marvel;
+    font-weight: 800;
+    letter-spacing: 2px;
+}
+
+/* ------------------------------------------------------------------------------------------------------- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+@keyframes before {
+    from {
+        top: 0;
+        left: -4px;
+    }
+    to {
+        top: 0;
+        left: 100%;
+    }
+}
+
+body {
+    width: 100%;
+    min-height: 100vh;
+    background: linear-gradient(rgb(121 85 72 / 50%),rgb(121 85 72 / 50%)),url(../images/background.jpg) center no-repeat;
+    background-size: cover;
+    @include GridStyle($template-tablet, $row);
+
+    @include MediaQuery($mobile-l) {
+        grid-template-rows: $template-mobile-devices;
+    }
+
+    @include MediaQuery($labtop) {
+        grid-template-rows: $template-labtop;
+    }
+
+    @include MediaQuery($labtop-l) {
+        grid-template-rows: $template-labtop-lg-4k;
+    }
+
+    .header {
+        @extend %width-height;
+        grid-row: 1/2;
+        background: linear-gradient(rgb(0 0 0 / 40%), rgb(0 0 0 / 30%)), url(../images/background-guitar-page.jpg) center no-repeat;
+        background-size: cover;
+        border-radius: 0 0 20px 20px;
+    }
+
+    .products {
+        width: 95%;
+        height: 95%;
+        grid-row: 2/3;
+        overflow: hidden;
+        gap: 1vw;
+        @include GridStyle($template-products, $column);
+
+        @include MediaQuery($mobile-l){
+            grid-template-columns: $template-products-mobile;
+        }
+
+        .container {
+            @extend %width-height;
+            border: 2px outset $green-yellow-crayola;
+            overflow: hidden;
+            position: relative;
+            top: 0;
+            @include GridStyle($template-container,$row);
+            z-index: 10;
+
+            &:hover .imgBX{
+                height: 100%;
+                transition: height .5s ease-in-out;
+            }
+            &:hover .information {
+                bottom: 0;
+                transition: bottom .5s ease-in-out;
+            }
+            .imgBX {
+                width: 100%;
+                height: 230%;
+                position: relative;
+                z-index: 10;
+                transition: height .5s ease-in-out;
+            }
+
+            .img1 {
+                background: url(../images/guitar-classic-1.jpg.jpg) center no-repeat;
+                background-size: cover;
+            }
+            .img2 {
+                background: url(../images/guitar-classic-2.jpg) center no-repeat;
+                background-size: cover;
+            }
+            .img3 {
+                background: url(../images/guitar-classic-3.jpg) center no-repeat;
+                background-size: cover;
+            }
+            .img4 {
+                background: url(../images/guitar-classic-4.jpg) center no-repeat;
+                background-size: cover;
+            }
+            .img5 {
+                background: url(../images/guitar-classic-5.jpg) center no-repeat;
+                background-size: cover;
+            }
+            .img6 {
+                background: url(../images/guitar-classic-6.jpg) center no-repeat;
+                background-size: cover;
+            }
+
+            .information {
+                width: 100%;
+                height: 40%;
+                @include GridStyle($template-information, $row);
+                position: absolute;
+                bottom: 100%;
+                transition: bottom .5s ease-in-out;
+
+                .title {
+                    grid-row: 1/2;
+                    @extend %Style-headings;
+
+                    @include MediaQuery($mobile-l) {
+                        letter-spacing: 0;
+                        font-size: .9rem;
+                    }
+                }
+
+                .price {
+                    grid-row: 3/4;
+                    @extend %Style-headings;
+                }
+
+                .buy {
+                    width: 90%;
+                    height: 100%;
+                    grid-row: 4/5;
+                    border: none;
+                    font-size: .7rem;
+                    font-family: 'Marvel';
+                    font-weight: 800;
+                    letter-spacing: 10px;
+                    background: $green-yellow-crayola;
+                    position: relative;
+                    transition: all .5s;
+
+                    @include MediaQuery($mobile-m) {
+                        letter-spacing: 7px;
+                    }
+
+                    &::before {
+                        content: "";
+                        width: 0.5vw;
+                        height: 100%;
+                        box-shadow: 8px 0px 20px 9px #ffffff9c;
+                        position: absolute;
+                        top: 0;
+                        left: -4px;
+                        background-color: #ffffff5c;
+                        animation: before 3s infinite alternate ease-in-out;
+                    }
+                    &:hover {
+                        background-color: $amaranth-red-opacity;
+                        border-radius: 15px;
+                        transition: all .5s;
+                    }
+                }
+
+                .colors {
+                    @extend %width-height;
+                    @include FlexStyle($r, $space-evenly);
+                    grid-row: 2/3;
+
+                    span {
+                        width: 3vw;
+                        height: 3vw;
+                        border-radius: 10px;
+
+                        @include MediaQuery($mobile-l) {
+                            width: 5vw;
+                            height: 5vw;
+                        }
+
+                        &:hover {
+                            box-shadow: 0px 0px 5px 9px #ffffff7a, inset 0px 0px 4px 2px #ffffff;
+
+                            @include MediaQuery($mobile-l) {
+                                box-shadow: 0px 0px 6px 7px rgb(255 255 255 / 48%), inset 0px 0px 5px 2px #ffffff;
+                            }
+                        }
+                    }
+
+                    .color11 {
+                        background-color: $blue-sapphire;
+                    }
+                    .color12 {
+                        background-color: $space-cadet;
+                    }
+                    .color13 {
+                        background-color: $ou-crimson-red;
+                    }
+                    .color21 {
+                        background-color: $ochre;
+                    }
+                    .color22 {
+                        background-color: $amaranth-red;
+                    }
+                    .color23 {
+                        background-color: $green-yellow-crayola;
+                    }
+                    .color31 {
+                        background-color: $space-cadet;
+                    }
+                    .color32 {
+                        background-color: $ochre;
+                    }
+                    .color33 {
+                        background-color: $green-yellow-crayola;
+                    }
+                    .color41 {
+                        background-color: $blue-sapphire;
+                    }
+                    .color42 {
+                        background-color: $ou-crimson-red;
+                    }
+                    .color43 {
+                        background-color: $amaranth-red;
+                    }
+                    .color51 {
+                        background-color: $blue-sapphire;
+                    }
+                    .color52 {
+                        background-color: $green-yellow-crayola;
+                    }
+                    .color53 {
+                        background-color: $ou-crimson-red;
+                    }
+                    .color61 {
+                        background-color: $ochre;
+                    }
+                    .color62 {
+                        background-color: $space-cadet;
+                    }
+                    .color63 {
+                        background-color: $amaranth-red;
+                    }
+
+                }
+            }
+        }
+    }
+
+    .footer {
+        width: 95%;
+        height: 95%;
+        grid-row: 3/4;
+        background-color: rgb(56 56 56 / 50%);
+        border-radius: 15px;
+
+        nav {
+            @extend %width-height;
+
+            ul {
+                @extend %width-height;
+                @include FlexStyle($r, $space-around);
+
+                li {
+                    @include FlexStyle($r, $center);
+                    border: 1px solid $ochre;
+                    height: 8vw;
+                    width: 8vw;
+                    border-radius: 50%;
+                    box-shadow: inset 0px 0px 20px 13px $green-yellow-crayola-opacity;
+                    background-color: $green-yellow-crayola;
+
+                    @include MediaQuery($mobile-s) {
+                        height: 15vw;
+                        width: 15vw;
+                    }
+                    @include MediaQuery($mobile-m) {
+                        height: 15vw;
+                        width: 15vw;
+                    }
+                    @include MediaQuery($mobile-l) {
+                        height: 15vw;
+                        width: 15vw;
+                    }
+
+                    @include MediaQuery($labtop) {
+                        width: 6vw;
+                        height: 6vw;
+                    }
+                    @include MediaQuery($labtop-l) {
+                        width: 5vw;
+                        height: 5vw;
+                    }
+
+                    &::after {
+                        content: "";
+                        width: 9.5vw;
+                        height: 0.4vw;
+                        background: $amaranth-red;
+                        z-index: -1;
+                        position: absolute;
+                        box-shadow: 0px 0px 20px 10px $amaranth-red-opacity;
+                        transition: all 0.5s;
+
+                        @include MediaQuery($mobile-s) {
+                            width: 20vw;
+                        }
+                        @include MediaQuery($mobile-m) {
+                            width: 19vw;
+                        }
+                        @include MediaQuery($mobile-l) {
+                            width: 18vw;
+                        }
+                        @include MediaQuery($labtop) {
+                            width: 7vw;
+                            height: 0.3vw;
+                        }
+                        @include MediaQuery($labtop-l) {
+                            width: 6vw;
+                            height: 0.3vw;
+                        }
+                    }
+
+                    &::before {
+                        content: "";
+                        width: 0.4vw;
+                        height: 9.5vw;                    
+                        background: $ou-crimson-red;
+                        z-index: -1;
+                        position: absolute;
+                        box-shadow: 0px 0px 20px 10px $ou-crimson-red-opacity;
+                        transition: all 0.5s;
+
+                        @include MediaQuery($mobile-s) {
+                            height: 20vw !important;
+                        }
+                        @include MediaQuery($mobile-m) {
+                            height: 19vw;
+                        }
+                        @include MediaQuery($mobile-l) {
+                            height: 18vw;
+                        }
+                        @include MediaQuery($labtop) {
+                            height: 7vw;
+                            width: 0.3vw;
+                        }
+                        @include MediaQuery($labtop-l) {
+                            height: 6vw;
+                            width: 0.3vw;
+                        }
+                    }
+
+                    &:hover::before,
+                    &:hover::after {
+                        transform: rotate(90deg);
+                        transition: transform .5s ease-out;
+                    }
+
+                    &:hover a {
+                        color: $ochre;
+                        text-shadow: 0 0 5px $amaranth-red-opacity;
+                        transition: all 0.5s ease-out;
+                    }
+
+                    a {
+                        text-decoration: none;
+                        text-shadow: 0 0 5px white;
+                        font-size: 1rem;
+                        color: $amaranth-red;
+
+                        @include MediaQuery($labtop-4k) {
+                            font-size: 2rem;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,413 @@
+/* -------------------------------------- */
+body .footer nav ul, body .footer nav, body .products .container .information .colors, body .products .container, body .header {
+  width: 100%;
+  height: 100%;
+}
+
+body .products .container .information .price, body .products .container .information .title {
+  font-size: 1rem;
+  font-family: "Marvel";
+  font-weight: 800;
+  letter-spacing: 2px;
+}
+
+/* ------------------------------------------------------------------------------------------------------- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+@keyframes before {
+  from {
+    top: 0;
+    left: -4px;
+  }
+  to {
+    top: 0;
+    left: 100%;
+  }
+}
+body {
+  width: 100%;
+  min-height: 100vh;
+  background: linear-gradient(rgba(121, 85, 72, 0.5), rgba(121, 85, 72, 0.5)), url(../images/background.jpg) center no-repeat;
+  background-size: cover;
+  display: grid;
+  justify-items: center;
+  align-items: center;
+  grid-template-rows: 40% 100% 15%;
+}
+@media all and (max-width: 425px) {
+  body {
+    grid-template-rows: 20% 150% 15%;
+  }
+}
+@media all and (min-width: 1024px) {
+  body {
+    grid-template-rows: 60% 100% 15%;
+  }
+}
+@media all and (min-width: 1440px) {
+  body {
+    grid-template-rows: 65% 100% 15%;
+  }
+}
+body .header {
+  grid-row: 1/2;
+  background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.3)), url(../images/background-guitar-page.jpg) center no-repeat;
+  background-size: cover;
+  border-radius: 0 0 20px 20px;
+}
+body .products {
+  width: 95%;
+  height: 95%;
+  grid-row: 2/3;
+  overflow: hidden;
+  gap: 1vw;
+  display: grid;
+  justify-items: center;
+  align-items: center;
+  grid-template-columns: repeat(3, 1fr);
+}
+@media all and (max-width: 425px) {
+  body .products {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+body .products .container {
+  border: 2px outset #dbda90;
+  overflow: hidden;
+  position: relative;
+  top: 0;
+  display: grid;
+  justify-items: center;
+  align-items: center;
+  grid-template-rows: 60% 40%;
+  z-index: 10;
+}
+body .products .container:hover .imgBX {
+  height: 100%;
+  transition: height 0.5s ease-in-out;
+}
+body .products .container:hover .information {
+  bottom: 0;
+  transition: bottom 0.5s ease-in-out;
+}
+body .products .container .imgBX {
+  width: 100%;
+  height: 230%;
+  position: relative;
+  z-index: 10;
+  transition: height 0.5s ease-in-out;
+}
+body .products .container .img1 {
+  background: url(../images/guitar-classic-1.jpg.jpg) center no-repeat;
+  background-size: cover;
+}
+body .products .container .img2 {
+  background: url(../images/guitar-classic-2.jpg) center no-repeat;
+  background-size: cover;
+}
+body .products .container .img3 {
+  background: url(../images/guitar-classic-3.jpg) center no-repeat;
+  background-size: cover;
+}
+body .products .container .img4 {
+  background: url(../images/guitar-classic-4.jpg) center no-repeat;
+  background-size: cover;
+}
+body .products .container .img5 {
+  background: url(../images/guitar-classic-5.jpg) center no-repeat;
+  background-size: cover;
+}
+body .products .container .img6 {
+  background: url(../images/guitar-classic-6.jpg) center no-repeat;
+  background-size: cover;
+}
+body .products .container .information {
+  width: 100%;
+  height: 40%;
+  display: grid;
+  justify-items: center;
+  align-items: center;
+  grid-template-rows: repeat(4, 1fr);
+  position: absolute;
+  bottom: 100%;
+  transition: bottom 0.5s ease-in-out;
+}
+body .products .container .information .title {
+  grid-row: 1/2;
+}
+@media all and (max-width: 425px) {
+  body .products .container .information .title {
+    letter-spacing: 0;
+    font-size: 0.9rem;
+  }
+}
+body .products .container .information .price {
+  grid-row: 3/4;
+}
+body .products .container .information .buy {
+  width: 90%;
+  height: 100%;
+  grid-row: 4/5;
+  border: none;
+  font-size: 0.7rem;
+  font-family: "Marvel";
+  font-weight: 800;
+  letter-spacing: 10px;
+  background: #dbda90;
+  position: relative;
+  transition: all 0.5s;
+}
+@media all and (max-width: 375px) {
+  body .products .container .information .buy {
+    letter-spacing: 7px;
+  }
+}
+body .products .container .information .buy::before {
+  content: "";
+  width: 0.5vw;
+  height: 100%;
+  box-shadow: 8px 0px 20px 9px rgba(255, 255, 255, 0.6117647059);
+  position: absolute;
+  top: 0;
+  left: -4px;
+  background-color: rgba(255, 255, 255, 0.3607843137);
+  animation: before 3s infinite alternate ease-in-out;
+}
+body .products .container .information .buy:hover {
+  background-color: rgba(217, 16, 44, 0.7607843137);
+  border-radius: 15px;
+  transition: all 0.5s;
+}
+body .products .container .information .colors {
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  justify-content: space-evenly;
+  grid-row: 2/3;
+}
+body .products .container .information .colors span {
+  width: 3vw;
+  height: 3vw;
+  border-radius: 10px;
+}
+@media all and (max-width: 425px) {
+  body .products .container .information .colors span {
+    width: 5vw;
+    height: 5vw;
+  }
+}
+body .products .container .information .colors span:hover {
+  box-shadow: 0px 0px 5px 9px rgba(255, 255, 255, 0.4784313725), inset 0px 0px 4px 2px #ffffff;
+}
+@media all and (max-width: 425px) {
+  body .products .container .information .colors span:hover {
+    box-shadow: 0px 0px 6px 7px rgba(255, 255, 255, 0.48), inset 0px 0px 5px 2px #ffffff;
+  }
+}
+body .products .container .information .colors .color11 {
+  background-color: #2a6983;
+}
+body .products .container .information .colors .color12 {
+  background-color: #23233c;
+}
+body .products .container .information .colors .color13 {
+  background-color: #881e1e;
+}
+body .products .container .information .colors .color21 {
+  background-color: #cc792b;
+}
+body .products .container .information .colors .color22 {
+  background-color: #d9102c;
+}
+body .products .container .information .colors .color23 {
+  background-color: #dbda90;
+}
+body .products .container .information .colors .color31 {
+  background-color: #23233c;
+}
+body .products .container .information .colors .color32 {
+  background-color: #cc792b;
+}
+body .products .container .information .colors .color33 {
+  background-color: #dbda90;
+}
+body .products .container .information .colors .color41 {
+  background-color: #2a6983;
+}
+body .products .container .information .colors .color42 {
+  background-color: #881e1e;
+}
+body .products .container .information .colors .color43 {
+  background-color: #d9102c;
+}
+body .products .container .information .colors .color51 {
+  background-color: #2a6983;
+}
+body .products .container .information .colors .color52 {
+  background-color: #dbda90;
+}
+body .products .container .information .colors .color53 {
+  background-color: #881e1e;
+}
+body .products .container .information .colors .color61 {
+  background-color: #cc792b;
+}
+body .products .container .information .colors .color62 {
+  background-color: #23233c;
+}
+body .products .container .information .colors .color63 {
+  background-color: #d9102c;
+}
+body .footer {
+  width: 95%;
+  height: 95%;
+  grid-row: 3/4;
+  background-color: rgba(56, 56, 56, 0.5);
+  border-radius: 15px;
+}
+body .footer nav ul {
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  justify-content: space-around;
+}
+body .footer nav ul li {
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  justify-content: center;
+  border: 1px solid #cc792b;
+  height: 8vw;
+  width: 8vw;
+  border-radius: 50%;
+  box-shadow: inset 0px 0px 20px 13px rgba(219, 218, 144, 0.4392156863);
+  background-color: #dbda90;
+}
+@media all and (max-width: 320px) {
+  body .footer nav ul li {
+    height: 15vw;
+    width: 15vw;
+  }
+}
+@media all and (max-width: 375px) {
+  body .footer nav ul li {
+    height: 15vw;
+    width: 15vw;
+  }
+}
+@media all and (max-width: 425px) {
+  body .footer nav ul li {
+    height: 15vw;
+    width: 15vw;
+  }
+}
+@media all and (min-width: 1024px) {
+  body .footer nav ul li {
+    width: 6vw;
+    height: 6vw;
+  }
+}
+@media all and (min-width: 1440px) {
+  body .footer nav ul li {
+    width: 5vw;
+    height: 5vw;
+  }
+}
+body .footer nav ul li::after {
+  content: "";
+  width: 9.5vw;
+  height: 0.4vw;
+  background: #d9102c;
+  z-index: -1;
+  position: absolute;
+  box-shadow: 0px 0px 20px 10px rgba(217, 16, 44, 0.7607843137);
+  transition: all 0.5s;
+}
+@media all and (max-width: 320px) {
+  body .footer nav ul li::after {
+    width: 20vw;
+  }
+}
+@media all and (max-width: 375px) {
+  body .footer nav ul li::after {
+    width: 19vw;
+  }
+}
+@media all and (max-width: 425px) {
+  body .footer nav ul li::after {
+    width: 18vw;
+  }
+}
+@media all and (min-width: 1024px) {
+  body .footer nav ul li::after {
+    width: 7vw;
+    height: 0.3vw;
+  }
+}
+@media all and (min-width: 1440px) {
+  body .footer nav ul li::after {
+    width: 6vw;
+    height: 0.3vw;
+  }
+}
+body .footer nav ul li::before {
+  content: "";
+  width: 0.4vw;
+  height: 9.5vw;
+  background: #881e1e;
+  z-index: -1;
+  position: absolute;
+  box-shadow: 0px 0px 20px 10px rgba(136, 30, 30, 0.5019607843);
+  transition: all 0.5s;
+}
+@media all and (max-width: 320px) {
+  body .footer nav ul li::before {
+    height: 20vw !important;
+  }
+}
+@media all and (max-width: 375px) {
+  body .footer nav ul li::before {
+    height: 19vw;
+  }
+}
+@media all and (max-width: 425px) {
+  body .footer nav ul li::before {
+    height: 18vw;
+  }
+}
+@media all and (min-width: 1024px) {
+  body .footer nav ul li::before {
+    height: 7vw;
+    width: 0.3vw;
+  }
+}
+@media all and (min-width: 1440px) {
+  body .footer nav ul li::before {
+    height: 6vw;
+    width: 0.3vw;
+  }
+}
+body .footer nav ul li:hover::before, body .footer nav ul li:hover::after {
+  transform: rotate(90deg);
+  transition: transform 0.5s ease-out;
+}
+body .footer nav ul li:hover a {
+  color: #cc792b;
+  text-shadow: 0 0 5px rgba(217, 16, 44, 0.7607843137);
+  transition: all 0.5s ease-out;
+}
+body .footer nav ul li a {
+  text-decoration: none;
+  text-shadow: 0 0 5px white;
+  font-size: 1rem;
+  color: #d9102c;
+}
+@media all and (min-width: 2560px) {
+  body .footer nav ul li a {
+    font-size: 2rem;
+  }
+}/*# sourceMappingURL=classic-guitar.css.map */

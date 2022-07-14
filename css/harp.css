@@ -1,0 +1,417 @@
+body .footer nav ul, body .footer nav, body .footer, body .pre-footer .two-parts .left .slide-show, body .pre-footer .two-parts .left, body .pre-footer .two-parts .right .text, body .pre-footer .two-parts .right, body .pre-footer .two-parts, body .products .num6 .img6, body .products .num5 .img5, body .products .num4 .img4, body .products .num3 .img3, body .products .num2 .img2, body .products .num1 .img1, body .products .container .information, body .products .container, body .header {
+  width: 100%;
+  height: 100%;
+}
+
+/* ----------------------------------------------------------------------------------------------------------------- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+@keyframes background {
+  0% {
+    background-color: rgba(251, 211, 182, 0.3019607843);
+  }
+  50% {
+    background-color: rgba(227, 145, 163, 0.3019607843);
+  }
+  100% {
+    background-color: rgba(152, 87, 164, 0.3019607843);
+  }
+}
+@keyframes slideshow {
+  0% {
+    background: url(../images/harp-history1.jpg) center no-repeat;
+    background-size: contain;
+  }
+  33% {
+    background: url(../images/harp-history2.jpg) center no-repeat;
+    background-size: contain;
+  }
+  66% {
+    background: url(../images/harp-history3.jpeg) center no-repeat;
+    background-size: contain;
+  }
+  100% {
+    background: url(../images/harp-history4.jpg) center no-repeat;
+    background-size: contain;
+  }
+}
+body {
+  width: 100%;
+  min-height: 100vh;
+  display: grid;
+  justify-items: center;
+  align-items: center;
+  grid-template-rows: 50% 150% 40% 15%;
+}
+@media all and (max-width: 425px) {
+  body {
+    grid-template-rows: 35% 180% 50% 15%;
+  }
+}
+@media all and (max-width: 375px) {
+  body {
+    grid-template-rows: 25% 445% 50% 15%;
+  }
+}
+@media all and (min-width: 1024px) {
+  body {
+    grid-template-rows: 60% 210% 42% 15%;
+  }
+}
+@media all and (min-width: 1440px) {
+  body {
+    grid-template-rows: 90% 230% 40% 15%;
+  }
+}
+body .header {
+  background: linear-gradient(90deg, rgba(251, 162, 195, 0.4), rgba(255, 0, 235, 0.3)), url(../images/background-harp-page.jpg) center no-repeat;
+  background-size: cover;
+  box-shadow: 8px 11px 10px 5px rgba(128, 128, 128, 0.6);
+}
+body .products {
+  width: 95%;
+  height: 95%;
+  display: grid;
+  justify-items: center;
+  align-items: center;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1vw;
+  box-shadow: 0px 0px 20px 10px #fbd2b4;
+}
+@media all and (max-width: 425px) {
+  body .products {
+    grid-template-columns: repeat(2, 1fr);
+    height: 99%;
+  }
+}
+@media all and (max-width: 375px) {
+  body .products {
+    grid-template-columns: 1fr;
+  }
+}
+body .products .container {
+  display: grid;
+  justify-items: center;
+  align-items: center;
+  grid-template-rows: 60% 40%;
+}
+body .products .container .information {
+  font-family: "Nunito", cursive;
+  display: grid;
+  justify-items: center;
+  align-items: center;
+  grid-template-rows: repeat(3, 1fr);
+  animation: background 3s infinite alternate ease-in-out;
+}
+body .products .container .information .title {
+  font-size: 1rem;
+  font-weight: 800;
+  letter-spacing: 2px;
+  grid-row: 1/2;
+}
+@media all and (min-width: 1440px) {
+  body .products .container .information .title {
+    font-size: 1.5rem;
+  }
+}
+@media all and (min-width: 2560px) {
+  body .products .container .information .title {
+    font-size: 2.5rem;
+  }
+}
+body .products .container .information .price {
+  font-size: 1rem;
+  grid-row: 2/3;
+}
+@media all and (min-width: 1440px) {
+  body .products .container .information .price {
+    font-size: 1.5rem;
+  }
+}
+@media all and (min-width: 2560px) {
+  body .products .container .information .price {
+    font-size: 2.5rem;
+  }
+}
+body .products .container .information .buy {
+  width: 60%;
+  height: 60%;
+  border: groove rgba(255, 255, 255, 0.3215686275);
+  background: transparent;
+  border-radius: 15px;
+  font-size: 1rem;
+  letter-spacing: 3px;
+  font-weight: bold;
+  font-family: "Dancing Script", monospace;
+  grid-row: 3/4;
+}
+@media all and (min-width: 1440px) {
+  body .products .container .information .buy {
+    font-size: 1.5rem;
+  }
+}
+@media all and (min-width: 2560px) {
+  body .products .container .information .buy {
+    font-size: 2.5rem;
+  }
+}
+body .products .container .information .buy:focus {
+  width: 80%;
+  height: 80%;
+  font-size: 1.5rem;
+  color: #a92974;
+  font-weight: bold;
+}
+@media all and (min-width: 2560px) {
+  body .products .container .information .buy:focus {
+    font-size: 3rem;
+  }
+}
+body .products .num1 {
+  border: 2px dashed #fbd2b4;
+  background: rgba(251, 211, 182, 0.3019607843);
+}
+body .products .num1 .img1 {
+  background: url(../images/Harp-1.jpg) center no-repeat;
+  background-size: cover;
+}
+body .products .num2 {
+  border: 2px dotted #a92974;
+  background: rgba(169, 41, 116, 0.3019607843);
+}
+body .products .num2 .img2 {
+  background: url(../images/Harp-2.jpg) center no-repeat;
+  background-size: cover;
+}
+body .products .num3 {
+  border: 2px groove #f68849;
+  background: rgba(246, 137, 73, 0.3019607843);
+}
+body .products .num3 .img3 {
+  background: url(../images/Harp-3.jpg) center no-repeat;
+  background-size: cover;
+}
+body .products .num4 {
+  border: 2px solid #f6b95b;
+  background: rgba(246, 184, 91, 0.3019607843);
+}
+body .products .num4 .img4 {
+  background: url(../images/Harp-4.jpg) center no-repeat;
+  background-size: cover;
+}
+body .products .num5 {
+  border: 2px outset #9857a4;
+  background: rgba(152, 87, 164, 0.3019607843);
+}
+body .products .num5 .img5 {
+  background: url(../images/Harp-5.jpg) center no-repeat;
+  background-size: cover;
+}
+body .products .num6 {
+  border: 2px ridge #e391a3;
+  background: rgba(227, 145, 163, 0.3019607843);
+}
+body .products .num6 .img6 {
+  background: url(../images/Harp-6.jpg) center no-repeat;
+  background-size: cover;
+}
+body .pre-footer {
+  width: 95%;
+  height: 100%;
+  box-shadow: 0px 0px 15px 2px #f6b95b;
+}
+@media all and (max-width: 425px) {
+  body .pre-footer {
+    position: relative;
+  }
+}
+body .pre-footer .two-parts {
+  display: grid;
+  justify-items: center;
+  align-items: center;
+  grid-template-columns: repeat(2, 1fr);
+}
+@media all and (max-width: 425px) {
+  body .pre-footer .two-parts {
+    grid-template-columns: 1fr;
+  }
+}
+body .pre-footer .two-parts .right {
+  border-right: 2px dashed #f68849;
+  box-shadow: inset 0px 0px 20px 5px #f68849;
+}
+@media all and (max-width: 425px) {
+  body .pre-footer .two-parts .right {
+    position: absolute;
+  }
+}
+body .pre-footer .two-parts .right .text {
+  font-size: 0.9rem;
+  font-family: "Nunito", cursive;
+  padding: 1vw;
+  line-height: 3vw;
+}
+@media all and (max-width: 425px) {
+  body .pre-footer .two-parts .right .text {
+    line-height: 8vw;
+    color: rgba(0, 0, 0, 0.8);
+    background-color: rgba(251, 211, 182, 0.3019607843);
+  }
+}
+@media all and (min-width: 2560px) {
+  body .pre-footer .two-parts .right .text {
+    font-size: 1.9rem;
+  }
+}
+body .pre-footer .two-parts .left {
+  animation: slideshow 10s infinite alternate ease-in-out;
+}
+body .footer {
+  border-radius: 15px;
+}
+body .footer nav ul {
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  justify-content: space-around;
+}
+body .footer nav ul li {
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  justify-content: center;
+  border: 1px solid #e391a3;
+  height: 8vw;
+  width: 8vw;
+  border-radius: 50%;
+  box-shadow: inset 0px 0px 20px 13px rgba(251, 211, 182, 0.3019607843);
+  background-color: #fbd2b4;
+}
+@media all and (max-width: 320px) {
+  body .footer nav ul li {
+    height: 15vw;
+    width: 15vw;
+  }
+}
+@media all and (max-width: 375px) {
+  body .footer nav ul li {
+    height: 15vw;
+    width: 15vw;
+  }
+}
+@media all and (max-width: 425px) {
+  body .footer nav ul li {
+    height: 15vw;
+    width: 15vw;
+  }
+}
+@media all and (min-width: 1024px) {
+  body .footer nav ul li {
+    width: 6vw;
+    height: 6vw;
+  }
+}
+@media all and (min-width: 1440px) {
+  body .footer nav ul li {
+    width: 5vw;
+    height: 5vw;
+  }
+}
+body .footer nav ul li::after {
+  content: "";
+  width: 9.5vw;
+  height: 0.4vw;
+  background: #a92974;
+  z-index: -1;
+  position: absolute;
+  box-shadow: 0px 0px 20px 10px rgba(169, 41, 116, 0.3019607843);
+  transition: all 0.5s;
+}
+@media all and (max-width: 320px) {
+  body .footer nav ul li::after {
+    width: 20vw;
+  }
+}
+@media all and (max-width: 375px) {
+  body .footer nav ul li::after {
+    width: 19vw;
+  }
+}
+@media all and (max-width: 425px) {
+  body .footer nav ul li::after {
+    width: 18vw;
+  }
+}
+@media all and (min-width: 1024px) {
+  body .footer nav ul li::after {
+    width: 7vw;
+    height: 0.3vw;
+  }
+}
+@media all and (min-width: 1440px) {
+  body .footer nav ul li::after {
+    width: 6vw;
+    height: 0.3vw;
+  }
+}
+body .footer nav ul li::before {
+  content: "";
+  width: 0.4vw;
+  height: 9.5vw;
+  background: #9857a4;
+  z-index: -1;
+  position: absolute;
+  box-shadow: 0px 0px 20px 10px rgba(152, 87, 164, 0.3019607843);
+  transition: all 0.5s;
+}
+@media all and (max-width: 320px) {
+  body .footer nav ul li::before {
+    height: 20vw !important;
+  }
+}
+@media all and (max-width: 375px) {
+  body .footer nav ul li::before {
+    height: 19vw;
+  }
+}
+@media all and (max-width: 425px) {
+  body .footer nav ul li::before {
+    height: 18vw;
+  }
+}
+@media all and (min-width: 1024px) {
+  body .footer nav ul li::before {
+    height: 7vw;
+    width: 0.3vw;
+  }
+}
+@media all and (min-width: 1440px) {
+  body .footer nav ul li::before {
+    height: 6vw;
+    width: 0.3vw;
+  }
+}
+body .footer nav ul li:hover::before, body .footer nav ul li:hover::after {
+  transform: rotate(90deg);
+  transition: transform 0.5s ease-out;
+}
+body .footer nav ul li:hover a {
+  color: #f6b95b;
+  text-shadow: 0 0 5px rgba(246, 184, 91, 0.3019607843);
+  transition: all 0.5s ease-out;
+}
+body .footer nav ul li a {
+  text-decoration: none;
+  text-shadow: 0 0 5px rgba(246, 137, 73, 0.3019607843);
+  font-size: 1rem;
+  color: #f68849;
+}
+@media all and (min-width: 2560px) {
+  body .footer nav ul li a {
+    font-size: 2rem;
+  }
+}/*# sourceMappingURL=harp.css.map */

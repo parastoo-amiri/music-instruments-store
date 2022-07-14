@@ -1,0 +1,51 @@
+/* main page colors */
+$color-background : #ECECECff;
+$color-first : #f34a4a;
+$color-second : #CC5539ff;
+$color-third : #AD726Dff;
+$color-forth : #F69D17ff;
+$color-fifth : #394650ff;
+$color-sixth : #E4B362ff;
+$color-seventh : #FDD111ff;
+/* main page colors */
+
+/* voilin page colors */
+$antique-brass: #da987a;
+$antique-brass-opacity: rgb(218, 152, 122,.8);
+
+$liver-organ: #642516ff;
+$liver-organ-opacity : rgb(100, 37, 22,.8);
+
+$desert-sand: #F3D4BCff;
+$desert-sand-opacity : rgb(243, 212, 188,.8);
+
+$dark-sienna: #2B0A07ff;
+$dark-sienna-opacity : rgb(43, 10, 7,.8);
+
+$champagne-pink: #FCE9DBff;
+$champagne-pink-opacity : rgb(252, 233, 219,.8);
+
+$color-second-opacity : rgba(204, 84, 57, 0.8);
+/* voilin page colors */
+
+/* font pages */
+$font-dancing : 'Dancing Script', monospace;
+$font-Josefin : 'Josefin Sans', cursive;
+$font-Nunito : 'Nunito', cursive;
+$font-Marvel : 'Marvel';
+/* font pages */
+
+/* media for Responsive */
+@mixin mediaforMaxDevices($width) {
+    @media all and(min-width : $width) {
+        @content;
+    }
+}
+@mixin mediaforMinDevices($width) {
+    @media all and(max-width : $width) {
+        @content;
+    }
+}
+/* media for Responsive */
+
+

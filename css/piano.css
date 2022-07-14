@@ -1,0 +1,382 @@
+/* style */
+/* style */
+/* template */
+/* template */
+/*  Footer */
+/* Footer */
+/* screens */
+/* screens */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  width: 100%;
+  min-height: 100vh;
+  display: grid;
+  align-items: center;
+  justify-items: center;
+  grid-template-rows: 20% 50% 20% 10%;
+  background: url(../images/background-piano-body.jpg) repeat;
+  background-size: cover;
+}
+@media all and (min-width: 1024px) {
+  body {
+    display: grid;
+    align-items: center;
+    justify-items: center;
+    grid-template-rows: 20% 68% 35% 15%;
+  }
+}
+@media all and (min-width: 1440px) {
+  body {
+    display: grid;
+    align-items: center;
+    justify-items: center;
+    grid-template-rows: 20% 80% 35% 15%;
+  }
+}
+@media all and (min-width: 2560px) {
+  body {
+    display: grid;
+    align-items: center;
+    justify-items: center;
+    grid-template-rows: 20% 81% 35% 15%;
+  }
+}
+body .navigation {
+  background: url(../images/background-piano-page.jpg) center no-repeat;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+}
+body .products {
+  width: 100%;
+  height: 100%;
+  display: grid;
+  align-items: center;
+  justify-items: center;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.5vw;
+}
+@media all and (max-width: 425px) {
+  body .products {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media all and (max-width: 375px) {
+  body .products {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media all and (max-width: 320px) {
+  body .products {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+body .products .product {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  border: 2px groove rgba(128, 128, 128, 0.368627451);
+  position: relative;
+  display: grid;
+  align-items: center;
+  justify-items: center;
+  grid-template-rows: 1fr;
+}
+body .products .product:hover .card {
+  grid-template-rows: 40% 60%;
+}
+body .products .product:hover .imgBX {
+  transform: scale(0.7);
+  transition: transform 0.5s;
+}
+body .products .product:hover .contentBX {
+  display: grid;
+  align-items: center;
+  justify-items: center;
+  grid-template-rows: repeat(3, 1fr);
+}
+body .products .product:hover .title {
+  grid-row: 1/2;
+  transition: grid-row 0.5s;
+}
+body .products .product:hover .price {
+  grid-row: 2/3;
+  transition: grid-row 0.5s 0.5s;
+}
+body .products .product:hover .button {
+  bottom: 0;
+  transition: all 0.5s 0.5s;
+}
+body .products .product .card {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  background: transparent;
+  overflow: hidden;
+  display: grid;
+  align-items: center;
+  justify-items: center;
+  grid-template-rows: 60% 40%;
+}
+body .products .product .card:hover:before {
+  clip-path: polygon(0 1%, 100% 0%, 100% 50%, 0 0);
+}
+body .products .product .card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  clip-path: polygon(0 1%, 100% 0%, 100% 0, 0 50%);
+  transition: 0.5s ease-in-out;
+}
+body .products .product .card1::before {
+  background-color: #394650;
+}
+body .products .product .card2::before {
+  background-color: #ad726d;
+}
+body .products .product .card3::before {
+  background-color: #373d49;
+}
+body .products .product .card4::before {
+  background-color: #e4b362;
+}
+body .products .product .card5::before {
+  background-color: #cc5539;
+}
+body .products .product .card6::before {
+  background-color: #f34a4a;
+}
+body .products .product .imgBX {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  transform: scale(1);
+  transition: transform 0.5s;
+}
+body .products .product .imgBX img {
+  z-index: 100000;
+  width: 11vw;
+}
+body .products .product .contentBX {
+  width: 100%;
+  height: 100%;
+  transition: 1s;
+  z-index: 10;
+  display: grid;
+  align-items: center;
+  justify-items: center;
+  grid-template-rows: repeat(2, 1fr);
+}
+body .products .product .title {
+  font-size: 3vw;
+  grid-row: 1/2;
+  font-family: "Josefin Sans", cursive;
+  color: black;
+}
+body .products .product .price {
+  font-size: 2vw;
+  font-family: "Josefin Sans", cursive;
+  color: black;
+  transition: all 0.5s;
+  grid-row: 2/3;
+}
+body .products .product .button:focus {
+  width: 3vw;
+  height: 3vw;
+  border-radius: 50%;
+  transition: all 0.5s;
+  width: 4vw;
+  height: 4vw;
+}
+body .products .product .button:focus span {
+  display: none;
+}
+body .products .product .button:focus i.bi.bi-check2-all {
+  display: block;
+  transition: display 0.5s;
+}
+body .products .product .button i.bi.bi-check2-all {
+  display: none;
+}
+body .products .product .button-1 {
+  border: none;
+  width: 11vw;
+  height: 3vw;
+  background-color: #394650;
+  border-radius: 20px;
+  font-size: 2vw;
+  font-family: "Dancing Script", monospace;
+  color: white;
+  position: absolute;
+  bottom: -100%;
+}
+body .products .product .button-2 {
+  border: none;
+  width: 11vw;
+  height: 3vw;
+  background-color: #ad726d;
+  border-radius: 20px;
+  font-size: 2vw;
+  font-family: "Dancing Script", monospace;
+  color: white;
+  position: absolute;
+  bottom: -100%;
+}
+body .products .product .button-3 {
+  border: none;
+  width: 11vw;
+  height: 3vw;
+  background-color: #373d49;
+  border-radius: 20px;
+  font-size: 2vw;
+  font-family: "Dancing Script", monospace;
+  color: white;
+  position: absolute;
+  bottom: -100%;
+}
+body .products .product .button-4 {
+  border: none;
+  width: 11vw;
+  height: 3vw;
+  background-color: #e4b362;
+  border-radius: 20px;
+  font-size: 2vw;
+  font-family: "Dancing Script", monospace;
+  color: white;
+  position: absolute;
+  bottom: -100%;
+}
+body .products .product .button-5 {
+  border: none;
+  width: 11vw;
+  height: 3vw;
+  background-color: #cc5539;
+  border-radius: 20px;
+  font-size: 2vw;
+  font-family: "Dancing Script", monospace;
+  color: white;
+  position: absolute;
+  bottom: -100%;
+}
+body .products .product .button-6 {
+  border: none;
+  width: 11vw;
+  height: 3vw;
+  background-color: #f34a4a;
+  border-radius: 20px;
+  font-size: 2vw;
+  font-family: "Dancing Script", monospace;
+  color: white;
+  position: absolute;
+  bottom: -100%;
+}
+body .description {
+  display: grid;
+  align-items: center;
+  justify-items: center;
+  grid-template-columns: 1fr;
+  grid-row: 3/4;
+  font-size: 2vw;
+  line-height: 3vw;
+  font-family: "Dancing Script", monospace;
+  text-indent: 2vw;
+  padding: 0 1vw;
+  height: 100%;
+}
+body .footer {
+  width: 100%;
+  border-top: 2px groove rgba(40, 38, 38, 0.2784313725);
+}
+body .footer .social {
+  width: 100%;
+  height: 10vw;
+  display: grid;
+  justify-items: center;
+}
+body .footer .social ul {
+  display: grid;
+  align-items: center;
+  justify-items: center;
+  grid-template-columns: repeat(4, 1fr);
+  width: 40%;
+  padding-top: 1vw;
+}
+body .footer .social ul li {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+body .footer .social ul li:hover a {
+  color: white;
+}
+body .footer .social ul li:hover .d1 {
+  height: 100%;
+  transition: height 0.3s;
+}
+body .footer .social ul li:hover .d2 {
+  width: 100%;
+  transition: width 0.3s;
+}
+body .footer .social ul li:hover .d3 {
+  width: 100%;
+  transition: width 0.3s;
+}
+body .footer .social ul li:hover .d4 {
+  height: 100%;
+  transition: height 0.3s;
+}
+body .footer .social ul .d1 {
+  width: 100%;
+  height: 15%;
+  background-color: #f69d17;
+  border-top-left-radius: 5px;
+  position: absolute;
+  top: 0;
+  z-index: 1;
+  transition: height 0.3s;
+}
+body .footer .social ul .d2 {
+  border-top-right-radius: 5px;
+  width: 15%;
+  height: 100%;
+  background-color: #cc5539;
+  position: absolute;
+  left: 0;
+  z-index: 1;
+}
+body .footer .social ul .d3 {
+  border-top-right-radius: 5px;
+  border-top-left-radius: 5px;
+  width: 15%;
+  height: 100%;
+  background-color: #e4b362;
+  position: absolute;
+  right: 0;
+  z-index: 1;
+}
+body .footer .social ul .d4 {
+  width: 100%;
+  height: 15%;
+  background-color: #ad726d;
+  border-top-right-radius: 5px;
+  position: absolute;
+  bottom: 0;
+  z-index: 1;
+}
+body .footer .social ul a {
+  font-size: 3vw;
+  color: #394650;
+  z-index: 2;
+}/*# sourceMappingURL=piano.css.map */

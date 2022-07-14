@@ -1,0 +1,366 @@
+$font-dancing : 'Dancing Script',
+monospace;
+$font-Josefin : 'Josefin Sans',
+cursive;
+$font-Nunito : 'Nunito',
+cursive;
+$font-Marvel : 'Marvel';
+
+$blue-sapphire: #0E6478ff;
+$middle-blue: #70C5D0ff;
+$pacific-blue: #40A1B6ff;
+$light-cyan: #CEEEECff;
+$powder-blue: #B2E5E7ff;
+
+// screen
+$mobile-s : 320px;
+$mobile-m : 375px;
+$mobile-l : 425px;
+$labtop : 1024px;
+$labtop-l : 1440px;
+$labtop-4k : 2560px;
+
+// screen
+@mixin MediaQuery($screen) {
+    @if $screen==$mobile-l {
+        @media all and (max-width : $screen) {
+            @content;
+        }
+    }
+
+    @else if $screen==$mobile-m {
+        @media all and (max-width : $screen) {
+            @content;
+        }
+    }
+
+    @else if $screen==$mobile-s {
+        @media all and (max-width : $screen) {
+            @content;
+        }
+    }
+
+    @else if $screen==$labtop {
+        @media all and (min-width : $screen) {
+            @content;
+        }
+    }
+
+    @else if $screen==$labtop-l {
+        @media all and (min-width : $screen) {
+            @content;
+        }
+    }
+
+    @else if $screen==$labtop-4k {
+        @media all and (min-width : $screen) {
+            @content;
+        }
+    }
+}
+
+// template
+$mobile-l-for-body : 50% 400% 20%;
+$mobile-m-for-body : 50% 400% 20%;
+$mobile-s-for-body : 50% 400% 20%;
+$tablet-for-body : 50% 200% 20%;
+$products-for-large-devices : repeat(2, 1fr);
+$products-for-mobile-l : 1fr;
+$products-for-mobile-m : 1fr;
+$products-for-mobile-s : 1fr;
+// template
+// style
+$row : rows;
+$column : columns;
+
+// style
+@mixin GridStyle($template, $style) {
+    display: grid;
+    justify-items: center;
+    align-items: center;
+    grid-template-#{$style}: $template;
+}
+
+// justify-content
+$center : center;
+$space-evenly : space-evenly;
+$space-around : space-around;
+// justify-content
+// flex-direction
+$r : row;
+$c : column;
+
+@mixin FlexStyle($flex-direction, $justify-content) {
+    display: flex;
+    align-items: center;
+    flex-direction: $flex-direction;
+    justify-content: $justify-content;
+}
+
+%width-height {
+    width: 100%;
+    height: 100%;
+}
+
+body {
+    width: 100%;
+    height: 100vh;
+    @include GridStyle($tablet-for-body, $row);
+
+    @include MediaQuery($mobile-l) {
+        @include GridStyle($mobile-l-for-body, $row);
+    }
+
+    @include MediaQuery($mobile-m) {
+        @include GridStyle($mobile-m-for-body, $row);
+    }
+
+    @include MediaQuery($mobile-s) {
+        @include GridStyle($mobile-s-for-body, $row);
+    }
+
+    .header {
+        @extend %width-height;
+        background: linear-gradient(rgb(0 0 0 / 0), rgb(0 0 0 / 80%)), url(../images/background-flute-page.png) center no-repeat;
+        background-size: cover;
+    }
+
+    .main {
+        @extend %width-height;
+        @include FlexStyle($c, $center);
+        background: url(../images/background-flute-page.jpg) center no-repeat;
+        background-size: cover;
+
+        .products {
+            -webkit-backdrop-filter: blur(4px);
+            backdrop-filter: blur(4px);
+            width: 95%;
+            height: 95%;
+            border-radius: 10px;
+            gap: 0.5vw;
+            @include GridStyle($products-for-large-devices, $column);
+
+            @include MediaQuery($mobile-l) {
+                @include GridStyle($products-for-mobile-l, $column );
+            }
+
+            @include MediaQuery($mobile-m) {
+                @include GridStyle($products-for-mobile-m, $column );
+            }
+
+            @include MediaQuery($mobile-s) {
+                @include GridStyle($products-for-mobile-s, $column );
+            }
+
+            .card {
+                @extend %width-height;
+                @include FlexStyle($c, $center);
+                border-radius: 10px;
+                background-color: rgb(6 6 6 / 50%);
+            }
+
+            .img {
+                @extend %width-height;
+                background-size: contain !important;
+                transform: scale(1);
+                transition: all .5s;
+
+                &:hover {
+                    transform: scale(1.5);
+                    transition: all .5s;
+                }
+            }
+
+            .img1 {
+                background: url(../images/Flute-1.jpg) center no-repeat;
+            }
+
+            .img2 {
+                background: url(../images/Flute-2.jpg) center no-repeat;
+            }
+
+            .img3 {
+                background: url(../images/Flute-3.jpg) center no-repeat;
+            }
+
+            .img4 {
+                background: url(../images/Flute-4.jpg) center no-repeat;
+            }
+
+            .img5 {
+                background: url(../images/Flute-5.jpg) center no-repeat;
+            }
+
+            .img6 {
+                background: url(../images/Flute-6.jpg) center no-repeat;
+            }
+
+            .information {
+                width: 100%;
+                height: 50%;
+                @include FlexStyle($c, $space-evenly);
+                font-size: 1.5rem;
+                letter-spacing: 5px;
+                font-family: $font-dancing;
+                color: white;
+
+                @include MediaQuery($labtop-4k) {
+                    font-size: 3rem;
+                }
+
+                .button {
+                    font-size: 1rem;
+                    font-family: 'Dancing Script';
+                    width: 50%;
+                    height: 25%;
+                    @include FlexStyle($c, $center);
+
+                    @include MediaQuery($labtop-4k) {
+                        font-size: 2rem;
+                    }
+
+                    &:focus .second {
+                        display: block;
+                        color: rgba(255, 0, 0, 0.664);
+                    }
+
+                    &:focus .first {
+                        display: none;
+                    }
+
+                    .second {
+                        display: none;
+                    }
+                }
+            }
+        }
+    }
+
+    .footer {
+        @extend %width-height;
+        background-color: rgb(56 56 56 / 50%);
+        border-radius: 15px;
+
+        nav {
+            @extend %width-height;
+
+            ul {
+                @extend %width-height;
+                @include FlexStyle($r, $space-around);
+
+                li {
+                    @include FlexStyle($r, $center);
+                    border: 1px solid $blue-sapphire;
+                    height: 8vw;
+                    width: 8vw;
+                    border-radius: 50%;
+                    box-shadow: inset 0px 0px 20px 13px $middle-blue;
+                    background-color: $light-cyan;
+
+                    @include MediaQuery($mobile-s) {
+                        height: 15vw;
+                        width: 15vw;
+                    }
+                    @include MediaQuery($mobile-m) {
+                        height: 15vw;
+                        width: 15vw;
+                    }
+                    @include MediaQuery($mobile-l) {
+                        height: 15vw;
+                        width: 15vw;
+                    }
+
+                    @include MediaQuery($labtop) {
+                        width: 6vw;
+                        height: 6vw;
+                    }
+                    @include MediaQuery($labtop-l) {
+                        width: 5vw;
+                        height: 5vw;
+                    }
+
+                    &::after {
+                        content: "";
+                        width: 9.5vw;
+                        height: 0.4vw;
+                        background: $blue-sapphire;
+                        z-index: -1;
+                        position: absolute;
+                        box-shadow: 0px 0px 20px 10px $middle-blue;
+                        transition: all 0.5s;
+
+                        @include MediaQuery($mobile-s) {
+                            width: 20vw;
+                        }
+                        @include MediaQuery($mobile-m) {
+                            width: 19vw;
+                        }
+                        @include MediaQuery($mobile-l) {
+                            width: 18vw;
+                        }
+                        @include MediaQuery($labtop) {
+                            width: 7vw;
+                            height: 0.3vw;
+                        }
+                        @include MediaQuery($labtop-l) {
+                            width: 6vw;
+                            height: 0.3vw;
+                        }
+                    }
+
+                    &::before {
+                        content: "";
+                        width: 0.4vw;
+                        height: 9.5vw;                    
+                        background: $pacific-blue;
+                        z-index: -1;
+                        position: absolute;
+                        box-shadow: 0px 0px 20px 10px $middle-blue;
+                        transition: all 0.5s;
+
+                        @include MediaQuery($mobile-s) {
+                            height: 20vw !important;
+                        }
+                        @include MediaQuery($mobile-m) {
+                            height: 19vw;
+                        }
+                        @include MediaQuery($mobile-l) {
+                            height: 18vw;
+                        }
+                        @include MediaQuery($labtop) {
+                            height: 7vw;
+                            width: 0.3vw;
+                        }
+                        @include MediaQuery($labtop-l) {
+                            height: 6vw;
+                            width: 0.3vw;
+                        }
+                    }
+
+                    &:hover::before,
+                    &:hover::after {
+                        transform: rotate(90deg);
+                        transition: transform .5s ease-out;
+                    }
+
+                    &:hover a {
+                        color: darkcyan;
+                        text-shadow: 0 0 5px lightgreen;
+                        transition: all 0.5s ease-out;
+                    }
+
+                    a {
+                        text-decoration: none;
+                        text-shadow: 0 0 5px white;
+                        font-size: 1rem;
+                        color: $blue-sapphire;
+
+                        @include MediaQuery($labtop-4k) {
+                            font-size: 2rem;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
